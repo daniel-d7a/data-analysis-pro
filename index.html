@@ -110,6 +110,13 @@
     .bg-mist {
       background: linear-gradient(180deg, rgba(187, 199, 223, 0.15) 0%, rgba(10, 22, 40, 0) 100%);
     }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
   </style>
 </head>
 
@@ -119,14 +126,14 @@
   <header class="fixed top-0 w-full z-50 bg-[#071325]/40 backdrop-blur-xl shadow-[0_40px_40px_rgba(215,227,252,0.08)]">
     <nav
       class="flex flex-row-reverse justify-between items-center px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans','Tajawal'] font-bold text-right">
-      <div class="text-2xl font-black text-white tracking-tighter">DATA ANALYSIS PRO</div>
+      <div class="text-2xl font-black text-white tracking-tighter">Data Analysis Pro</div>
       <div class="hidden md:flex flex-row-reverse gap-8 items-center">
-        <a class="text-[#FFD700] border-b-2 border-[#FFD700] pb-1" href="#">الرئيسية</a>
-        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#roadmap">المسار</a>
-        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#instructor">المدرب</a>
-        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#pricing">الأسعار</a>
-        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#testimonials">قصص النجاح</a>
         <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#faq">الأسئلة</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#testimonials">قصص النجاح</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#pricing">الأسعار</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#instructor">المدرب</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#roadmap">المسار</a>
+        <a class="text-[#FFD700] border-b-2 border-[#FFD700] pb-1" href="#">الرئيسية</a>
       </div>
       <button
         class="bg-tertiary text-on-tertiary px-6 py-2 rounded-md font-bold hover:scale-95 active:scale-90 duration-200 transition-all">
@@ -136,12 +143,12 @@
   </header>
   <!-- Section 1: Hero -->
   <section class="relative pt-32 pb-20 overflow-hidden bg-mist">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12">
+    <div class="max-w-7xl w-full mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12">
       <div class="w-full md:w-1/2 text-right">
         <div
-          class="inline-block bg-surface-container-highest text-secondary-fixed-dim px-4 py-1 rounded-full text-sm font-label mb-6"
+          class="inline-block bg-surface-container-highest text-secondary-fixed-dim px-4 py-1 rounded-full text-sm font-body mb-6"
           data-aos="fade-down">
-          +2000 طالب سبقوك
+          +2000 متدرب سبقوك
         </div>
         <h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white leading-tight mb-4" data-aos="fade-up"
           data-aos-delay="100">
@@ -158,14 +165,10 @@
         <div class="flex flex-col sm:flex-row-reverse gap-4 mb-12" data-aos="fade-up" data-aos-delay="400">
           <button
             class="bg-tertiary text-on-tertiary text-xl px-10 py-4 rounded-md font-extrabold hover:shadow-[0_0_20px_rgba(233,196,0,0.4)] transition-all">
-            سجّل الآن واضمن مقعدك
+            سجّل الآن و احجز مكانك
           </button>
         </div>
         <div class="flex flex-row-reverse items-center gap-8 opacity-60">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-secondary-container">database</span>
-            <span class="font-label">SQL</span>
-          </div>
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-secondary-container">query_stats</span>
             <span class="font-label">Power BI</span>
@@ -178,31 +181,41 @@
       </div>
       <div class="w-full md:w-1/2 relative" data-aos="fade-left" data-aos-delay="500">
         <div class="absolute inset-0 bg-secondary-container/10 blur-[100px] rounded-full"></div>
-        <img class="relative z-10 rounded-xl shadow-2xl border border-outline-variant/20 object-cover w-full h-[500px]"
-          data-alt="Professional analyst working with advanced data dashboards"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjanzng2LSWRfmUcUOklqdkCMInQN-Zim8sC6COfMUhHBhUqG8sdMrq3RJNxHi9X9KEazTX_TZYRxWmP_XUMPeprVK8PYIqB-v1Gg_LRDkjoYq-AvG-1t_MF32vt5suttzolsf22gT-YCVHRf7N7XSO5kFs9m8x9o7BMEZ0xehoQcY0xqu83M-1f4y9r8YTS6oSVCAOjYEVX1av8qYvYUKFjt5udM10tCHBDXiy_wxFQy0obZpygvChhBSEpud0JN-hzVlTfIVmzk" />
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script src="https://fast.wistia.com/embed/rnumrjraj3.js" async type="module"></script>
+        <style>
+          wistia-player[media-id='rnumrjraj3']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rnumrjraj3/swatch');
+            display: block;
+            filter: blur(5px);
+            padding-top: 177.78%;
+          }
+        </style>
+        <div class="w-full h-auto md:max-h-screen flex justify-center">
+          <wistia-player media-id="rnumrjraj3" aspect="0.5625"></wistia-player>
+        </div>
       </div>
     </div>
   </section>
   <!-- Section 2: Pricing Section (Redesigned) -->
   <section class="py-24 bg-surface-container-low" id="pricing">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl w-full mx-auto px-6">
       <h3 class="text-4xl font-headline font-black text-center mb-16">قيمة الكورس مقابل استثمارك</h3>
       <div class="space-y-8">
         <!-- Main Course Card -->
         <div
-          class="bg-surface-container-highest rounded-2xl p-8 md:p-12 border-2 border-secondary-container shadow-[0_0_40px_rgba(0,251,251,0.1)] relative overflow-hidden"
+          class="bg-surface-container-highest rounded-2xl p-8 pt-16 md:p-12 border-2 border-secondary-container shadow-[0_0_40px_rgba(0,251,251,0.1)] relative overflow-hidden"
           data-aos="zoom-in">
           <div
             class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-6 py-1 rounded-full text-sm font-bold">
             الأكثر طلباً</div>
           <div class="flex flex-col md:flex-row-reverse justify-between items-center gap-6">
-            <div class="text-right">
-              <h4 class="text-3xl md:text-4xl font-black mb-4">كورس DATA ANALYSIS PRO الأساسي</h4>
-              <p class="text-on-surface-variant text-lg">المنهج المتكامل من الصفر حتى الاحتراف في 20 أسبوع.</p>
-            </div>
             <div class="text-center md:text-left">
               <span class="text-4xl font-label text-secondary-container font-black">9,000 EGP</span>
+            </div>
+            <div class="text-right">
+              <h4 class="text-3xl md:text-4xl font-black mb-4">كورس Data Analysis Pro الأساسي</h4>
+              <p class="text-on-surface-variant text-lg">المنهج المتكامل من الصفر حتى الاحتراف في 20 أسبوع.</p>
             </div>
           </div>
         </div>
@@ -210,7 +223,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Bonus 1 -->
           <div
-            class="bg-surface-container-high rounded-2xl p-8 border border-outline-variant/20 hover:border-tertiary transition-colors group">
+            class="bg-surface-container-high rounded-2xl p-8 border-4 border-outline-variant/20 hover:border-tertiary transition-colors group">
             <div class="flex flex-col h-full">
               <span class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">🎁</span>
               <h5 class="text-xl font-bold mb-2">سيشن كتابة التقارير الاحترافية</h5>
@@ -222,7 +235,7 @@
           </div>
           <!-- Bonus 2 -->
           <div
-            class="bg-surface-container-high rounded-2xl p-8 border border-outline-variant/20 hover:border-tertiary transition-colors group">
+            class="bg-surface-container-high rounded-2xl p-8 border-4 border-outline-variant/20 hover:border-tertiary transition-colors group">
             <div class="flex flex-col h-full">
               <span class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">🎁</span>
               <h5 class="text-xl font-bold mb-2">سيشن مقدمة في Data Science</h5>
@@ -234,7 +247,7 @@
           </div>
           <!-- Bonus 3 -->
           <div
-            class="bg-surface-container-high rounded-2xl p-8 border border-outline-variant/20 hover:border-tertiary transition-colors group">
+            class="bg-surface-container-high rounded-2xl p-8 border-4 border-outline-variant/20 hover:border-tertiary transition-colors group">
             <div class="flex flex-col h-full">
               <span class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">🎁</span>
               <h5 class="text-xl font-bold mb-2">Eraa Data Camp البوتكامب العملي</h5>
@@ -253,15 +266,61 @@
                 EGP</span></span>
             <div
               class="inline-block bg-error-container text-white px-8 py-2 rounded-full font-black text-xl animate-pulse">
-              أنت توفر 12,000 جنيه مصري!
+              هتوفر 12,000 جنيه مصري!
             </div>
           </div>
-          <div class="text-8xl md:text-9xl font-headline font-black text-white mb-8 leading-tight">4,500 <span
+          <div class="text-6xl md:text-9xl font-headline font-black text-white mb-8 leading-tight">4,500 <span
               class="text-3xl md:text-4xl align-middle">EGP</span></div>
           <button
-            class="w-full max-w-2xl mx-auto bg-tertiary text-on-tertiary py-6 rounded-xl font-black text-2xl hover:brightness-110 hover:scale-[1.02] transition-all shadow-[0_20px_40px_rgba(233,196,0,0.2)]">
-            اشترك الآن واستفد من الخصم
+            class="w-full max-w-2xl mx-auto bg-tertiary text-on-tertiary px-8 py-6 rounded-xl font-black text-2xl hover:brightness-110 hover:scale-[1.02] transition-all shadow-[0_20px_40px_rgba(233,196,0,0.2)]">
+            اشترك دلوقتي عشان تستفيد من الخصم
           </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 8: Meet the Instructor -->
+  <section class="py-24 bg-surface-dim" id="instructor">
+    <div class="max-w-7xl w-full mx-auto px-6">
+      <div class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-col lg:flex-row-reverse">
+        <div class="w-full lg:w-2/5 relative">
+          <img class="w-full h-full object-cover" data-alt="Mohammad Abdelfattah - Lead Instructor"
+            src="./assets/1.jpeg" />
+          <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-surface-container-high to-transparent h-32">
+          </div>
+        </div>
+        <div class="w-full lg:w-3/5 p-12 text-right">
+          <h2 class="text-4xl font-headline font-black mb-4">م. محمد عبدالفتاح</h2>
+          <p class="text-tertiary text-xl font-bold mb-8">خبير تحليل البيانات بخبرة ١٧ عاماً</p>
+          <p class="text-on-surface-variant leading-relaxed text-lg mb-8">
+            اشتغل في ٢٧ دولة حول العالم، وساعد آلاف الطلاب على دخول مجال البيانات. صاحب قناة يوتيوب تضم أكثر من ١٠٠ ألف
+            مشترك مهتم بمجال تحليل البيانات والبيزنس إنتليجنس.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 mb-12 mt-12">
+            <img alt="Cinnabon"
+              src="https://cdn.brandfetch.io/idoZDUCAQs/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667799445101" />
+            <img alt="EFS"
+              src="https://cdn.brandfetch.io/idUGYozgU1/theme/light/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1769066974423" />
+            <img alt="Saint-Gobain"
+              src="https://cdn.brandfetch.io/idF7E-qR6-/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667873606889" />
+            <img alt="Alyoum" class="scale-[80%]"
+              src="https://cdn.brandfetch.io/idnr4gxlT6/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1688961164022" />
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-outline-variant/10 pt-12">
+            <div class="text-center">
+              <div class="text-4xl md:text-7xl font-black text-secondary-container mb-2">17+</div>
+              <div class="text-lg opacity-80">سنة خبرة</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl md:text-7xl font-black text-secondary-container mb-2">100k+</div>
+              <div class="text-lg opacity-80">متابع</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl md:text-7xl font-black text-secondary-container mb-2">27</div>
+              <div class="text-lg opacity-80">دولة</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -273,20 +332,20 @@
         style="background-image: radial-gradient(circle at 20% 50%, #000 1%, transparent 1%); background-size: 40px 40px;">
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-      <h2 class="text-5xl md:text-7xl font-headline font-black text-on-tertiary mb-8">ابدأ رحلتك للاحتراف فوراً</h2>
-      <p class="text-2xl md:text-3xl text-on-tertiary/80 font-bold mb-12 max-w-3xl mx-auto">لا تدع الفرصة تفوتك، المقاعد
-        المتاحة بالخصم الحالي توشك على النفاذ!</p>
+    <div class="max-w-7xl w-full mx-auto px-6 text-center relative z-10">
+      <h2 class="text-4xl md:text-7xl font-headline font-black text-on-tertiary mb-8">ابدأ رحلتك للاحتراف فوراً</h2>
+      <p class="text-2xl md:text-3xl text-on-tertiary/80 font-bold mb-12 max-w-3xl mx-auto">متخليش الفرصة تفوتك، الاماكن
+        المتاحة بالخصم الحالي محدودة جدا!</p>
       <button
         class="bg-surface-dim text-white px-16 py-6 rounded-full font-black text-2xl hover:bg-black transition-all shadow-2xl flex items-center gap-4 mx-auto">
-        <span>سجل الآن واضمن مقعدك</span>
+        <span>سجل الآن و احجز مكانك</span>
         <span class="material-symbols-outlined text-3xl">arrow_back</span>
       </button>
     </div>
   </section>
   <!-- Section 4: Pain Points -->
   <section class="py-24 bg-surface-container">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl w-full mx-auto px-6">
       <h2 class="text-4xl font-headline font-bold text-right mb-16">ليه الكورس ده معمول عشانك؟</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         <div class="p-8 bg-surface-container-low kinetic-border hover:bg-surface-container-high transition-all"
@@ -316,48 +375,70 @@
         </div>
       </div>
       <div class="text-center">
-        <p class="text-2xl font-headline text-secondary-container font-bold">هذا الكورس صمم خصيصاً عشانك وعشان يحللك كل
-          العقبات دي.</p>
+        <p class="text-2xl font-headline text-secondary-container font-bold">الكورس متصمم مخصوص عشانك وعشان يحللك كل
+          المشاكل دي.</p>
       </div>
     </div>
   </section>
   <!-- Section 5: Roadmap -->
   <section class="py-24 bg-surface-dim" id="roadmap">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl w-full mx-auto px-6">
       <div class="flex flex-col md:flex-row-reverse gap-16">
         <!-- Part A: Curriculum -->
         <div class="w-full md:w-2/3">
-          <h2 class="text-4xl font-headline font-bold mb-12 text-right">خارطة الطريق التعليمية</h2>
+          <h2 class="text-4xl font-headline font-bold mb-12 text-right">خريطة الطريق التعليمية</h2>
           <div class="space-y-4">
-            <div class="bg-surface-container-low p-6 rounded-xl border-r-4 border-secondary-container" data-aos="fade-right">
-              <div class="flex justify-between items-center mb-2 flex-row-reverse">
-                <span class="font-bold text-lg">Module 1-2: Advanced Excel</span>
-                <span class="font-label text-secondary-container">04 Weeks</span>
+            <div class="bg-surface-container-low p-6 rounded-xl border-r-4 border-secondary-container"
+              data-aos="fade-right">
+              <div class="flex justify-between items-center mb-2 flex-row">
+                <span class="font-bold text-lg">الدرس ١-٢: أساسيات الإكسيل</span>
+                <span class="font-body text-secondary-container flex gap-1">
+                  <span>٤</span>
+                  <span>
+                    أسابيع
+                  </span>
+                </span>
               </div>
-              <p class="text-on-surface-variant text-sm">إتقان الجداول المحورية، المعادلات المتقدمة، وداشبورد البيانات.
+              <p class="text-on-surface-variant text-sm">أساسيات الإكسيل، التعامل مع البيانات، وتنسيق الجداول باحترافية.
               </p>
             </div>
             <div class="bg-surface-container-low p-6 rounded-xl border-r-4 border-tertiary" data-aos="fade-right"
               data-aos-delay="100">
-              <div class="flex justify-between items-center mb-2 flex-row-reverse">
-                <span class="font-bold text-lg">Module 3-5: SQL Mastery</span>
-                <span class="font-label text-tertiary">06 Weeks</span>
+              <div class="flex justify-between items-center mb-2 flex-row">
+                <span class="font-bold text-lg">الدرس ٣-٥: الإكسيل المتقدم</span>
+                <span class="font-body text-tertiary flex gap-1">
+                  <span>٦</span>
+                  <span>
+                    أسابيع
+                  </span>
+                </span>
               </div>
-              <p class="text-on-surface-variant text-sm">التعامل مع قواعد البيانات الضخمة واستخراج التقارير بذكاء.</p>
+              <p class="text-on-surface-variant text-sm">إتقان المعادلات المعقدة، الجداول المحورية، وبناء الداشبوردز
+                التفاعلية.</p>
             </div>
-            <div class="bg-surface-container-low p-6 rounded-xl border-r-4 border-secondary-container" data-aos="fade-right"
-              data-aos-delay="200">
-              <div class="flex justify-between items-center mb-2 flex-row-reverse">
-                <span class="font-bold text-lg">Module 6-7: Power BI &amp; Visualization</span>
-                <span class="font-label text-secondary-container">06 Weeks</span>
+            <div class="bg-surface-container-low p-6 rounded-xl border-r-4 border-secondary-container"
+              data-aos="fade-right" data-aos-delay="200">
+              <div class="flex justify-between items-center mb-2 flex-row">
+                <span class="font-bold text-lg">الدرس ٦-٧: باور بي آي وتحليل البيانات</span>
+                <span class="font-body text-secondary-container flex gap-1">
+                  <span>٦</span>
+                  <span>
+                    أسابيع
+                  </span>
+                </span>
               </div>
               <p class="text-on-surface-variant text-sm">تحويل الأرقام الصماء إلى قصص مرئية تفاعلية مبهرة.</p>
             </div>
             <div class="bg-surface-container-low p-6 rounded-xl border-r-4 border-white" data-aos="fade-right"
               data-aos-delay="300">
-              <div class="flex justify-between items-center mb-2 flex-row-reverse">
-                <span class="font-bold text-lg">Module 8: Capstone Project</span>
-                <span class="font-label text-white">04 Weeks</span>
+              <div class="flex justify-between items-center mb-2 flex-row">
+                <span class="font-bold text-lg">الدرس ٨: مشروع التخرج النهائي</span>
+                <div class="font-body text-white flex gap-1">
+                  <span>٤</span>
+                  <span>
+                    أسابيع
+                  </span>
+                </div>
               </div>
               <p class="text-on-surface-variant text-sm">مشروع تخرج حقيقي يضاف لبورتفوليو أعمالك المهني.</p>
             </div>
@@ -400,36 +481,36 @@
   </section>
   <!-- Section 6: Course Format -->
   <section class="py-24 bg-surface-container-low">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-headline font-bold text-center mb-16">نظام الدراسة في الكورس</h2>
+    <div class="max-w-7xl w-full mx-auto px-6">
+      <h2 class="text-3xl font-headline font-bold text-center mb-16" data-aos="fade-down">نظام الدراسة في الكورس</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div
-          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row-reverse border border-outline-variant/10 group hover:border-tertiary transition-colors">
-          <div class="bg-tertiary/10 p-4 rounded-xl group-hover:bg-tertiary transition-colors">
-            <span
-              class="material-symbols-outlined text-tertiary text-4xl group-hover:text-on-tertiary">calendar_month</span>
+          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row border border-outline-variant/10 group hover:border-tertiary transition-colors"
+          data-aos="fade-up">
+          <div class="bg-tertiary/10 p-5 rounded-xl group-hover:bg-tertiary transition-colors">
+            <i class="fa-solid fa-calendar-days text-tertiary text-4xl group-hover:text-on-tertiary"></i>
           </div>
           <div class="text-right">
-            <div class="text-2xl font-black">20 أسبوع</div>
+            <div class="text-2xl font-black">8 اسابيع</div>
             <div class="text-on-surface-variant text-sm">مدة البرنامج الكاملة</div>
           </div>
         </div>
         <div
-          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row-reverse border border-outline-variant/10 group hover:border-tertiary transition-colors">
-          <div class="bg-tertiary/10 p-4 rounded-xl group-hover:bg-tertiary transition-colors">
-            <span
-              class="material-symbols-outlined text-tertiary text-4xl group-hover:text-on-tertiary">co_present</span>
+          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row border border-outline-variant/10 group hover:border-tertiary transition-colors"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-tertiary/10 p-5 rounded-xl group-hover:bg-tertiary transition-colors">
+            <i class="fa-solid fa-video text-tertiary text-4xl group-hover:text-on-tertiary"></i>
           </div>
           <div class="text-right">
-            <div class="text-2xl font-black">40 جلسة لايف</div>
+            <div class="text-2xl font-black">16 جلسة لايف</div>
             <div class="text-on-surface-variant text-sm">تفاعل مباشر مع المدرب</div>
           </div>
         </div>
         <div
-          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row-reverse border border-outline-variant/10 group hover:border-tertiary transition-colors">
-          <div class="bg-tertiary/10 p-4 rounded-xl group-hover:bg-tertiary transition-colors">
-            <span
-              class="material-symbols-outlined text-tertiary text-4xl group-hover:text-on-tertiary">event_repeat</span>
+          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row border border-outline-variant/10 group hover:border-tertiary transition-colors"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-tertiary/10 p-5 rounded-xl group-hover:bg-tertiary transition-colors">
+            <i class="fa-solid fa-calendar-check text-tertiary text-4xl group-hover:text-on-tertiary"></i>
           </div>
           <div class="text-right">
             <div class="text-2xl font-black">جلستين أسبوعياً</div>
@@ -437,12 +518,13 @@
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-center gap-6 mb-6">
         <div
-          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row-reverse border border-outline-variant/10 group hover:border-secondary-container transition-colors">
-          <div class="bg-secondary-container/10 p-4 rounded-xl group-hover:bg-secondary-container transition-colors">
-            <span
-              class="material-symbols-outlined text-secondary-container text-4xl group-hover:text-on-secondary-container">calendar_month</span>
+          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row border border-outline-variant/10 group hover:border-secondary-container transition-colors"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-secondary-container/10 p-5 rounded-xl group-hover:bg-secondary-container transition-colors">
+            <i
+              class="fa-solid fa-diagram-project text-secondary-container text-4xl group-hover:text-on-secondary-container"></i>
           </div>
           <div class="text-right">
             <div class="text-2xl font-black">تطبيقات عملية</div>
@@ -450,52 +532,41 @@
           </div>
         </div>
         <div
-          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row-reverse border border-outline-variant/10 group hover:border-secondary-container transition-colors">
-          <div class="bg-secondary-container/10 p-4 rounded-xl group-hover:bg-secondary-container transition-colors">
-            <span
-              class="material-symbols-outlined text-secondary-container text-4xl group-hover:text-on-secondary-container">co_present</span>
+          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row border border-outline-variant/10 group hover:border-secondary-container transition-colors"
+          data-aos="fade-up" data-aos-delay="400">
+          <div class="bg-secondary-container/10 p-5 rounded-xl group-hover:bg-secondary-container transition-colors">
+            <i class="fa-solid fa-bolt text-secondary-container text-4xl group-hover:text-on-secondary-container"></i>
           </div>
           <div class="text-right">
             <div class="text-2xl font-black">محتوى اضافي</div>
             <div class="text-on-surface-variant text-sm">محاضرات اضافية حصرية</div>
           </div>
         </div>
-        <!-- <div
-          class="p-8 bg-surface-container-highest rounded-2xl flex items-center gap-6 flex-row-reverse border border-outline-variant/10 group hover:border-secondary-container transition-colors">
-          <div class="bg-secondary-container/10 p-4 rounded-xl group-hover:bg-secondary-container transition-colors">
-            <span
-              class="material-symbols-outlined text-secondary-container text-4xl group-hover:text-on-secondary-container">event_repeat</span>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-black">3 جلسات أسبوعياً</div>
-            <div class="text-on-surface-variant text-sm">وتيرة تعليمية مكثفة</div>
-          </div>
-        </div> -->
       </div>
-      <div class="text-center mt-12">
+      <div class="text-center mt-12" data-aos="zoom-in" data-aos-delay="500">
         <button
           class="bg-secondary-container text-on-secondary-container px-12 py-5 rounded-md font-black text-xl hover:scale-105 transition-transform">
-          سجل الآن في دفعة مايو
-        </button>
+          سجل الآن </button>
       </div>
     </div>
   </section>
   <!-- Section 7: Testimonials -->
   <section class="pt-24 bg-surface-dim overflow-hidden" id="testimonials">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl w-full mx-auto px-6">
       <h2 class="text-4xl font-headline font-bold text-center mb-20">قصص نجاح أبطالنا</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
         <!-- Testimonial 1 -->
         <div
           class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 md:translate-y-8 hover:scale-[1.02] transition-all duration-300"
           data-aos="fade-up">
-          <div class="flex items-center gap-4 mb-6 flex-row-reverse">
+          <div class="flex items-center gap-4 mb-6 flex-row">
             <div
-              class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center bg-surface-container text-white font-black">
-              ا. ف</div>
+              class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-white border border-outline-variant/20">
+              <i class="fa-solid fa-circle-user text-3xl opacity-40"></i>
+            </div>
             <div class="text-right">
               <h5 class="font-bold">احمد فتحي</h5>
-              <div class="text-tertiary flex gap-1 justify-end">
+              <div class="text-tertiary flex gap-1 justify-start">
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
@@ -514,13 +585,14 @@
         <div
           class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 md:-translate-y-4 hover:scale-[1.02] transition-all duration-300"
           data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center gap-4 mb-6 flex-row-reverse">
+          <div class="flex items-center gap-4 mb-6 flex-row">
             <div
-              class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-black">
-              ب. ع</div>
+              class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+              <i class="fa-solid fa-circle-user text-3xl opacity-60"></i>
+            </div>
             <div class="text-right">
               <h5 class="font-bold">بدر على</h5>
-              <div class="text-tertiary flex gap-1 justify-end">
+              <div class="text-tertiary flex gap-1 justify-start">
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
@@ -537,13 +609,13 @@
         <div
           class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 md:translate-y-12 hover:scale-[1.02] transition-all duration-300"
           data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-center gap-4 mb-6 flex-row-reverse">
-            <div
-              class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center bg-tertiary text-black font-black">
-              ي</div>
+          <div class="flex items-center gap-4 mb-6 flex-row">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-tertiary text-black">
+              <i class="fa-solid fa-circle-user text-3xl opacity-60"></i>
+            </div>
             <div class="text-right">
               <h5 class="font-bold">يوسف</h5>
-              <div class="text-tertiary flex gap-1 justify-end">
+              <div class="text-tertiary flex gap-1 justify-start">
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
@@ -562,13 +634,13 @@
         <div
           class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 md:translate-y-12 hover:scale-[1.02] transition-all duration-300"
           data-aos="fade-up" data-aos-delay="300">
-          <div class="flex items-center gap-4 mb-6 flex-row-reverse">
-            <div
-              class="w-16 h-16 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary font-black">
-              ب.ب</div>
+          <div class="flex items-center gap-4 mb-6 flex-row">
+            <div class="w-16 h-16 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+              <i class="fa-solid fa-circle-user text-3xl opacity-80"></i>
+            </div>
             <div class="text-right">
               <h5 class="font-bold">بافلي بركات</h5>
-              <div class="text-tertiary flex gap-1 justify-end">
+              <div class="text-tertiary flex gap-1 justify-start">
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
@@ -586,13 +658,14 @@
         <div
           class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 md:-translate-y-4 hover:scale-[1.02] transition-all duration-300"
           data-aos="fade-up" data-aos-delay="400">
-          <div class="flex items-center gap-4 mb-6 flex-row-reverse">
+          <div class="flex items-center gap-4 mb-6 flex-row">
             <div
-              class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-white font-black border border-outline-variant/20">
-              ن.ع</div>
+              class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-white border border-outline-variant/20">
+              <i class="fa-solid fa-circle-user text-3xl opacity-40"></i>
+            </div>
             <div class="text-right">
               <h5 class="font-bold">نورة عبدالوهاب</h5>
-              <div class="text-tertiary flex gap-1 justify-end">
+              <div class="text-tertiary flex gap-1 justify-start">
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
@@ -609,13 +682,14 @@
         <div
           class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 md:translate-y-12 hover:scale-[1.02] transition-all duration-300"
           data-aos="fade-up" data-aos-delay="500">
-          <div class="flex items-center gap-4 mb-6 flex-row-reverse">
+          <div class="flex items-center gap-4 mb-6 flex-row">
             <div
-              class="w-16 h-16 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary-container font-black">
-              م.ج</div>
+              class="w-16 h-16 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary-container">
+              <i class="fa-solid fa-circle-user text-3xl opacity-60"></i>
+            </div>
             <div class="text-right">
               <h5 class="font-bold">محمد جمال</h5>
-              <div class="text-tertiary flex gap-1 justify-end">
+              <div class="text-tertiary flex gap-1 justify-start">
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
@@ -630,15 +704,16 @@
         </div>
         <!-- Testimonial 7 - Youssef -->
         <div
-          class="bg-surface-container-low col-start-2 p-8 rounded-xl border border-outline-variant/10 md:-translate-y-4 hover:scale-[1.02] transition-all duration-300"
+          class="bg-surface-container-low md:col-start-2 p-8 rounded-xl border border-outline-variant/10 md:-translate-y-4 hover:scale-[1.02] transition-all duration-300"
           data-aos="fade-up" data-aos-delay="600">
-          <div class="flex items-center gap-4 mb-6 flex-row-reverse">
+          <div class="flex items-center gap-4 mb-6 flex-row">
             <div
-              class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-white font-black border border-tertiary/20">
-              ر.ا</div>
+              class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-white border border-tertiary/20">
+              <i class="fa-solid fa-circle-user text-3xl opacity-40"></i>
+            </div>
             <div class="text-right">
               <h5 class="font-bold">رأفت اسماعيل</h5>
-              <div class="text-tertiary flex gap-1 justify-end">
+              <div class="text-tertiary flex gap-1 justify-start">
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
                 <span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>star</span>
@@ -655,72 +730,27 @@
       </div>
     </div>
   </section>
-  <!-- Section 8: Meet the Instructor -->
-  <section class="py-24 bg-surface-dim" id="instructor">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-col lg:flex-row-reverse">
-        <div class="w-full lg:w-2/5 relative">
-          <img class="w-full h-full object-cover" data-alt="Mohammad Abdelfattah - Lead Instructor"
-            src="./assets/1.jpeg" />
-          <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-surface-container-high to-transparent h-32">
-          </div>
-        </div>
-        <div class="w-full lg:w-3/5 p-12 text-right">
-          <h2 class="text-4xl font-headline font-black mb-4">م. محمد عبدالفتاح</h2>
-          <p class="text-tertiary text-xl font-bold mb-8">خبير تحليل البيانات بخبرة ١٧ عاماً</p>
-          <p class="text-on-surface-variant leading-relaxed text-lg mb-8">
-            اشتغل في ٢٧ دولة حول العالم، وساعد آلاف الطلاب على دخول مجال البيانات. صاحب قناة يوتيوب تضم أكثر من ١٠٠ ألف
-            مشترك مهتم بمجال تحليل البيانات والبيزنس إنتليجنس.
-          </p>
-          <div class="grid grid-cols-2 md:grid-cols-4 items-center justify-end gap-3 mb-12 mt-12">
-            <img alt="Cinnabon"
-              src="https://cdn.brandfetch.io/idoZDUCAQs/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667799445101" />
-            <img alt="EFS"
-              src="https://cdn.brandfetch.io/idUGYozgU1/theme/light/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1769066974423" />
-            <img alt="Saint-Gobain"
-              src="https://cdn.brandfetch.io/idF7E-qR6-/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667873606889" />
-            <img alt="Alyoum" class="scale-[80%]"
-              src="https://cdn.brandfetch.io/idnr4gxlT6/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1688961164022" />
-          </div>
-          <div class="grid grid-cols-3 gap-12 border-t border-outline-variant/10 pt-12">
-            <div class="text-center">
-              <div class="text-5xl md:text-7xl font-black text-secondary-container mb-2">17+</div>
-              <div class="text-lg opacity-80">سنة خبرة</div>
-            </div>
-            <div class="text-center">
-              <div class="text-5xl md:text-7xl font-black text-secondary-container mb-2">100k+</div>
-              <div class="text-lg opacity-80">متابع</div>
-            </div>
-            <div class="text-center">
-              <div class="text-5xl md:text-7xl font-black text-secondary-container mb-2">27</div>
-              <div class="text-lg opacity-80">دولة</div>
-            </div>
-          </div>
 
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- Section 10: Sample Video (Redesigned into two sub-sections) -->
   <section class="py-24 bg-surface-container-low">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl w-full mx-auto px-6">
       <h2 class="text-4xl font-headline font-black text-center mb-20">شوف بنفسك جودة الشرح</h2>
       <!-- Sub-section 1: Text Right / Video Left -->
       <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
         <div class="w-full md:w-1/2 text-right">
-          <h3 class="text-3xl font-bold mb-6 text-secondary-container">أساسيات تحليل البيانات عملياً</h3>
+          <h3 class="text-3xl font-bold mb-6 text-secondary-container">احتراف Power BI في عرض البيانات</h3>
           <ul class="space-y-4">
-            <li class="flex items-center gap-3 flex-row-reverse">
+            <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-tertiary">check_circle</span>
-              <span class="text-lg">شرح مفصل لأدوات Excel المتقدمة.</span>
+              <span class="text-lg">بناء التقارير التفاعلية (Dashboards) من الصفر.</span>
             </li>
-            <li class="flex items-center gap-3 flex-row-reverse">
+            <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-tertiary">check_circle</span>
-              <span class="text-lg">تطبيق مباشر على بيانات مبيعات حقيقية.</span>
+              <span class="text-lg">ربط مصادر البيانات المختلفة وتحويلها لنتائج مرئية.</span>
             </li>
-            <li class="flex items-center gap-3 flex-row-reverse">
+            <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-tertiary">check_circle</span>
-              <span class="text-lg">كيفية استخلاص النتائج والقرار الصحيح.</span>
+              <span class="text-lg">تصميم واجهات احترافية تسهل اتخاذ القرار.</span>
             </li>
           </ul>
         </div>
@@ -738,26 +768,26 @@
               }
             </style> <wistia-player media-id="4gvj5e40wn" aspect="1.7777777777777777"></wistia-player>
           </div>
-          <!-- <p class="text-center mt-4 text-on-surface-variant text-sm italic">مقتطف من محاضرة الأسبوع الثالث - Advanced
-            Excel</p> -->
+          <p class="text-center mt-4 text-on-surface-variant text-sm italic">مقتطف من كورس Power BI Pro - أساسيات بناء
+            التقارير</p>
         </div>
       </div>
       <!-- Sub-section 2: Video Right / Text Left -->
       <div class="flex flex-col md:flex-row-reverse items-center gap-12">
         <div class="w-full md:w-1/2 text-right">
-          <h3 class="text-3xl font-bold mb-6 text-secondary-container">قوة لغة SQL في التعامل مع البيانات</h3>
+          <h3 class="text-3xl font-bold mb-6 text-secondary-container">تحليل البيانات المتقدم باستخدام DAX</h3>
           <ul class="space-y-4">
-            <li class="flex items-center gap-3 flex-row-reverse">
+            <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-tertiary">check_circle</span>
-              <span class="text-lg">كتابة استعلامات معقدة بكل بساطة.</span>
+              <span class="text-lg">كتابة معادلات DAX متقدمة للحسابات المعقدة.</span>
             </li>
-            <li class="flex items-center gap-3 flex-row-reverse">
+            <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-tertiary">check_circle</span>
-              <span class="text-lg">الربط بين الجداول الضخمة واستخراج التقارير.</span>
+              <span class="text-lg">تنظيف وتجهيز البيانات باستخدام Power Query.</span>
             </li>
-            <li class="flex items-center gap-3 flex-row-reverse">
+            <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-tertiary">check_circle</span>
-              <span class="text-lg">أخطاء شائعة يقع فيها المبتدئون وكيف تتجنبها.</span>
+              <span class="text-lg">إنشاء نماذج بيانات (Data Modeling) قوية وفعالة.</span>
             </li>
           </ul>
         </div>
@@ -775,73 +805,53 @@
               }
             </style> <wistia-player media-id="kvhuhy7kjn" aspect="1.7777777777777777"></wistia-player>
           </div>
-          <p class="text-center mt-4 text-on-surface-variant text-sm italic">مقتطف من كورس SQL Mastery - المحاضرة
-            الخامسة</p>
+          <p class="text-center mt-4 text-on-surface-variant text-sm italic">مقتطف من كورس Power BI Pro - تحليل البيانات
+            المتقدم</p>
         </div>
       </div>
     </div>
   </section>
   <!-- Section 11: Who Is This For (Redesigned Grid) -->
   <section class="py-24 bg-surface-dim">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl w-full mx-auto px-6">
       <h2 class="text-4xl md:text-5xl font-headline font-black text-center mb-16">الكورس ده صُمم خصيصاً ليك لو كنت...
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Card 1 -->
         <div
-          class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-row-reverse shadow-xl group hover:-translate-y-2 transition-transform duration-300 border border-outline-variant/10">
-          <div class="w-1/3 overflow-hidden">
-            <img alt="Student Representative"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZttJeNYNYiRPi4nRRNrJH8aG2zlSK4tpN-ckHXtcBUUiJq_Xkmw01anb20DaiSGQiShB1qqildDkIcE332vpJIwBL7RAWmmq1BlgO9rQf0HuGdSyKq-4SrC--6D7HDvW0zb92Fdxv9YuK8qC0kxoY9ondBMwvC5-SLIXZtqefGSGym5J8VJvk2-oelKpV0Wp8OlOp3SJZ1kb9z-NKAGbwCeo_2Wr5HZQlyurejtpyhL2n0OtdlfbbaVm3jJQ7be7XS1jKD4eytWY" />
-          </div>
-          <div class="w-2/3 p-8 text-right">
-            <h3 class="text-2xl font-black mb-3 text-white">طالب أو خريج جديد</h3>
-            <p class="text-on-surface-variant leading-relaxed">عايز تبدأ مستقبلك بمهارة مطلوبة جداً وتضمن وظيفة بمرتبات
-              مجزية.</p>
-          </div>
+          class="bg-surface-container-high p-8 rounded-3xl shadow-xl group hover:-translate-y-2 transition-all duration-300 border border-outline-variant/10 flex flex-col items-center text-center"
+          data-aos="fade-up">
+          <span class="material-symbols-outlined text-6xl text-tertiary mb-6">school</span>
+          <h3 class="text-xl font-black mb-3 text-white">طالب أو خريج جديد</h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm">عايز تبدأ مستقبلك بمهارة مطلوبة جداً وتضمن وظيفة
+            بمرتبات مجزية.</p>
         </div>
         <!-- Card 2 -->
         <div
-          class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-row-reverse shadow-xl group hover:-translate-y-2 transition-transform duration-300 border border-outline-variant/10">
-          <div class="w-1/3 overflow-hidden">
-            <img alt="Professional Representative"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYJyZXKlLmDSCn9kzykq7MyaXivB6p6c9BaP2EYyT8HvfILVuv0x2xC3WRTGDrsoi5xh1cmmpOW09KJd1hjdNkyZa0_lYC0qmbxKwI0DuR-BW3k1mUBlQ2EdC74RQHGnREoBxyHGGMph__Igb0kvtuacVIEFx08ehIM159ZuRFjyinfaBeEkRnPEY2yzYxx64wqMBtzMFfvb90E7YerwRGVq_Oxj5N2GZeiS9ijh7trtfOtFMQhFLC1txQrbFYduEv8GnStciQdFU" />
-          </div>
-          <div class="w-2/3 p-8 text-right">
-            <h3 class="text-2xl font-black mb-3 text-white">موظف عايز يطور نفسه</h3>
-            <p class="text-on-surface-variant leading-relaxed">عايز تستخدم قوة البيانات والداشبوردز عشان تترقى في شغلك
-              الحالي وتسبق الكل.</p>
-          </div>
+          class="bg-surface-container-high p-8 rounded-3xl shadow-xl group hover:-translate-y-2 transition-all duration-300 border border-outline-variant/10 flex flex-col items-center text-center"
+          data-aos="fade-up" data-aos-delay="100">
+          <span class="material-symbols-outlined text-6xl text-tertiary mb-6">leaderboard</span>
+          <h3 class="text-xl font-black mb-3 text-white">موظف عايز يطور نفسه</h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm">عايز تستخدم قوة البيانات والداشبوردز عشان تترقى في
+            شغلك الحالي وتسبق الكل.</p>
         </div>
         <!-- Card 3 -->
         <div
-          class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-row-reverse shadow-xl group hover:-translate-y-2 transition-transform duration-300 border border-outline-variant/10">
-          <div class="w-1/3 overflow-hidden">
-            <img alt="Career Changer"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2TPGVgmfyBoDgDOCXgGbOmBp_VfhqogtaBsJ-IUc-QmpLUka1PG9HerVdRv5hqdaB8eZQPTNpnTz6ty8g2Gq2BgyqPl7NQhUBSrvQL2-mQ3zTa7W946bvMfD6VHT1SskuhDA5CK9BVw7GmVw56WZ1b6essjMDWm4SECeqoxUjCaWvgAyThw_rqW4SaLkmQPGUgdCWzSdiFU4CJgb-R25JoE6O6nprrptkN91x6xS6cYtVtIV0MlgzdY8VwVN4eQDUv9xc2Auku4" />
-          </div>
-          <div class="w-2/3 p-8 text-right">
-            <h3 class="text-2xl font-black mb-3 text-white">راغب في تغيير المجال</h3>
-            <p class="text-on-surface-variant leading-relaxed">شغال في مجال تاني وعايز تنقل لمجال البيانات الواعد بأقل
-              وقت ومجهود ممكن.</p>
-          </div>
+          class="bg-surface-container-high p-8 rounded-3xl shadow-xl group hover:-translate-y-2 transition-all duration-300 border border-outline-variant/10 flex flex-col items-center text-center"
+          data-aos="fade-up" data-aos-delay="200">
+          <span class="material-symbols-outlined text-6xl text-tertiary mb-6">move_down</span>
+          <h3 class="text-xl font-black mb-3 text-white">عاوز تغير مجالك</h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm">شغال في مجال تاني وعايز تنقل لمجال البيانات الواعد
+            بأقل وقت ومجهود ممكن.</p>
         </div>
         <!-- Card 4 -->
         <div
-          class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-row-reverse shadow-xl group hover:-translate-y-2 transition-transform duration-300 border border-outline-variant/10">
-          <div class="w-1/3 overflow-hidden">
-            <div class="w-full h-full bg-secondary-container/20 flex items-center justify-center">
-              <span class="material-symbols-outlined text-7xl text-secondary-container">person_search</span>
-            </div>
-          </div>
-          <div class="w-2/3 p-8 text-right">
-            <h3 class="text-2xl font-black mb-3 text-white">مبتدئ بدون خلفية تقنية</h3>
-            <p class="text-on-surface-variant leading-relaxed">معندكش أي خبرة في البرمجة، وعايز تتعلم الأدوات اللي تخليك
-              محلل بيانات شاطر.</p>
-          </div>
+          class="bg-surface-container-high p-8 rounded-3xl shadow-xl group hover:-translate-y-2 transition-all duration-300 border border-outline-variant/10 flex flex-col items-center text-center"
+          data-aos="fade-up" data-aos-delay="300">
+          <span class="material-symbols-outlined text-6xl text-tertiary mb-6">person_search</span>
+          <h3 class="text-xl font-black mb-3 text-white">مبتدئ بدون خلفية تقنية</h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm">معندكش أي خبرة في البرمجة، وعايز تتعلم الأدوات اللي
+            تخليك محلل بيانات شاطر.</p>
         </div>
       </div>
     </div>
@@ -850,7 +860,7 @@
   <section class="py-32 bg-surface-container-highest relative overflow-hidden">
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       <h2 class="text-4xl md:text-6xl font-headline font-black mb-8">جاهز تبدأ النهاردة؟</h2>
-      <p class="text-2xl text-secondary-container mb-12">باقي عدد قليل من المقاعد قبل إغلاق باب التسجيل</p>
+      <p class="text-2xl text-secondary-container mb-12">الاماكن المتاحة محدودة جدا!</p>
       <!-- Focal Countdown -->
       <div class="flex justify-center gap-6 md:gap-12 mb-16">
         <div class="flex flex-col items-center">
@@ -869,23 +879,23 @@
         </div>
       </div>
       <div class="flex flex-col items-center gap-2 mb-8">
-        <span class="text-2xl md:text-3xl text-white/40 line-through font-label">16,500 EGP</span>
-        <div class="text-8xl md:text-9xl font-headline font-black text-white">4,500 <span class="text-3xl">EGP</span>
+        <span class="text-2xl md:text-5xl text-white/40 line-through font-label">16,500 EGP</span>
+        <div class="text-6xl md:text-9xl font-headline font-black text-white">4,500 <span class="text-3xl">EGP</span>
         </div>
       </div>
       <button
         class="bg-tertiary text-on-tertiary px-16 py-8 rounded-md font-black text-3xl shadow-[0_20px_60px_rgba(233,196,0,0.3)] hover:scale-105 transition-transform duration-300">
-        سجّل الآن واضمن مقعدك 🔥
+        سجّل الآن و احجز مكانك 🔥
       </button>
     </div>
   </section>
   <!-- Section 13: FAQs -->
   <section class="py-24 bg-surface-dim" id="faq">
-    <div class="max-w-3xl mx-auto px-6">
+    <div class="max-w-3xl w-full mx-auto px-6">
       <h2 class="text-4xl font-headline font-bold text-center mb-16">الأسئلة الشائعة</h2>
       <div class="space-y-4">
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">مناسب لو معنديش خلفية؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -895,7 +905,7 @@
         </details>
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up"
           data-aos-delay="50">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">لو فاتني سيشن لايف؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -905,7 +915,7 @@
         </details>
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up"
           data-aos-delay="100">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">هل بحتاج لابتوب بمواصفات معينة؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -916,7 +926,7 @@
         </details>
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up"
           data-aos-delay="150">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">بناخد شهادة في نهاية الكورس؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -926,7 +936,7 @@
         </details>
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up"
           data-aos-delay="200">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">إيه نظام المتابعة لو واجهتني مشكلة؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -937,7 +947,7 @@
         </details>
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up"
           data-aos-delay="250">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">هل في مساعدة في تجهيز الـ CV؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -947,7 +957,7 @@
         </details>
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up"
           data-aos-delay="300">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">ممكن أقسط مصاريف الكورس؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -957,7 +967,7 @@
         </details>
         <details class="group bg-surface-container-low rounded-xl overflow-hidden" data-aos="fade-up"
           data-aos-delay="350">
-          <summary class="flex justify-between items-center p-6 cursor-pointer list-none flex-row-reverse">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
             <span class="font-bold text-lg">إيه الأدوات اللي بنتعلمها بالظبط؟</span>
             <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
           </summary>
@@ -971,11 +981,33 @@
   </section>
   <!-- Section 14: Footer (Redesigned) -->
   <footer class="bg-[#030E20] border-t border-white/5 pt-20 pb-12">
-    <div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-7xl w-full mx-auto px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-right">
+        <!-- Navigation Menu -->
+        <div class="col-span-1">
+          <h4 class="text-white font-bold mb-6">روابط سريعة</h4>
+          <ul class="space-y-4 text-on-surface-variant">
+            <li><a href="#" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
+            <li><a href="#roadmap" class="hover:text-tertiary transition-colors">مسار الكورس</a></li>
+            <li><a href="#pricing" class="hover:text-tertiary transition-colors">أسعار الاشتراك</a></li>
+            <li><a href="#instructor" class="hover:text-tertiary transition-colors">تعرف على المدرب</a></li>
+            <li><a href="#testimonials" class="hover:text-tertiary transition-colors">قصص النجاح</a></li>
+          </ul>
+        </div>
+        <!-- Support -->
+        <div class="col-span-1">
+          <h4 class="text-white font-bold mb-6">الدعم والمساعدة</h4>
+          <ul class="space-y-4 text-on-surface-variant">
+            <li><a href="#faq" class="hover:text-tertiary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="#" class="hover:text-tertiary transition-colors">تواصل معنا واتساب</a></li>
+            <li><a href="#" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="#" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a></li>
+            <li><a href="#" class="hover:text-tertiary transition-colors">شروط الاستخدام</a></li>
+          </ul>
+        </div>
         <!-- Brand Info -->
         <div class="col-span-1 md:col-span-1">
-          <div class="text-2xl font-black text-white mb-6">DATA ANALYSIS PRO</div>
+          <div class="text-2xl font-black text-white mb-6">Data Analysis Pro</div>
           <p class="text-on-surface-variant mb-8 leading-relaxed">
             أول برنامج تعليمي عربي متكامل يهدف لتمكينك من مجال تحليل البيانات بأحدث الأدوات والتقنيات العالمية.
           </p>
@@ -1002,28 +1034,6 @@
               <i class="fa-brands fa-telegram text-xl"></i>
             </a>
           </div>
-        </div>
-        <!-- Navigation Menu -->
-        <div class="col-span-1">
-          <h4 class="text-white font-bold mb-6">روابط سريعة</h4>
-          <ul class="space-y-4 text-on-surface-variant">
-            <li><a href="#" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
-            <li><a href="#roadmap" class="hover:text-tertiary transition-colors">مسار الكورس</a></li>
-            <li><a href="#pricing" class="hover:text-tertiary transition-colors">أسعار الاشتراك</a></li>
-            <li><a href="#instructor" class="hover:text-tertiary transition-colors">تعرف على المدرب</a></li>
-            <li><a href="#testimonials" class="hover:text-tertiary transition-colors">قصص النجاح</a></li>
-          </ul>
-        </div>
-        <!-- Support -->
-        <div class="col-span-1">
-          <h4 class="text-white font-bold mb-6">الدعم والمساعدة</h4>
-          <ul class="space-y-4 text-on-surface-variant">
-            <li><a href="#faq" class="hover:text-tertiary transition-colors">الأسئلة الشائعة</a></li>
-            <li><a href="#" class="hover:text-tertiary transition-colors">تواصل معنا واتساب</a></li>
-            <li><a href="#" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a></li>
-            <li><a href="#" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a></li>
-            <li><a href="#" class="hover:text-tertiary transition-colors">شروط الاستخدام</a></li>
-          </ul>
         </div>
         <!-- Newsletter/Contact -->
         <!-- <div class="col-span-1">
