@@ -288,7 +288,7 @@
             <p class="text-on-surface-variant text-xs mt-2 italic">* السعر شامل الضريبة والوصول مدى الحياة</p>
           </div>
           <!-- Enrollment Form -->
-          <form action="#" class="space-y-5">
+          <!-- <form action="#" class="space-y-5">
             <div class="space-y-2">
               <label class="block text-secondary-container text-sm font-bold mr-1">الاسم الكامل</label>
               <input
@@ -307,13 +307,34 @@
                 class="w-full bg-surface-container-highest border border-outline-variant/10 rounded-lg p-4 text-white focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
                 dir="ltr" placeholder="01xxxxxxxxx" type="tel" />
             </div>
-            <!-- CTA -->
             <button
               class="w-full bg-tertiary py-5 rounded-lg text-on-tertiary font-black text-base md:text-xl hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-tertiary/20 flex items-center justify-center gap-2 mt-4"
               type="submit">
               سجّل دلوقتي و احجز مكانك 🔥
             </button>
-          </form>
+          </form> -->
+
+          <!-- instapay link -->
+          <div class="mt-4 w-full">
+            <a href="#" target="_blank">
+              <img src="./assets/instapay.jpeg" alt="Instapay Payment"
+                class="w-full h-auto rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 border border-outline-variant/20" />
+            </a>
+          </div>
+
+          <!-- WhatsApp Confirmation Instructions -->
+          <div class="mt-6 bg-surface-container-high border border-[#25D366]/30 rounded-xl p-5 text-center shadow-lg">
+            <div class="flex items-center justify-center gap-2 text-white font-bold mb-3 text-sm md:text-base">
+              <span class="material-symbols-outlined text-[#25D366]">info</span>
+              بعد الدفع، برجاء إرسال إيصال التحويل لتأكيد حجزك
+            </div>
+            <a href="#" target="_blank"
+              class="w-full bg-[#25D366] text-white py-4 rounded-lg font-black text-base hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#25D366]/20 flex items-center justify-center gap-2 mt-4">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              أرسل الإيصال عبر واتساب
+            </a>
+          </div>
+
           <!-- Trust Signals -->
           <!-- <div class="mt-8 pt-6 border-t border-outline-variant/10 flex justify-around opacity-70">
             <div class="flex flex-col items-center gap-1">
@@ -343,14 +364,11 @@
       </aside>
     </div>
   </main>
-  <!-- SIDE NAV (WHATSAPP FLOATING) -->
-  <div class="fixed bottom-6 left-6 z-50 flex items-center justify-center">
-    <a class="bg-[#25D366] text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform animate-bounce flex items-center gap-2 border-2 border-white/20"
-      href="https://wa.me/xxxxxx" target="_blank">
-      <span class="hidden md:inline font-bold text-sm">محتاج مساعدة؟ كلمنا</span>
-      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
-    </a>
-  </div>
+  <!-- Floating WhatsApp Button -->
+  <a class="fixed bottom-6 left-6 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce flex items-center justify-center border-2 border-white/20"
+    href="https://wa.me/xxxxxx" target="_blank">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
   <footer class="bg-[#030E20] border-t border-white/5 pt-20 pb-12">
     <div class="max-w-7xl w-full mx-auto px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-right">
