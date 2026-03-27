@@ -197,7 +197,7 @@
           </div>
           <img alt="Course Preview"
             class="w-full aspect-video object-cover object-top opacity-80 hover:opacity-100 transition-opacity"
-            src="./assets/3.jpeg" />
+            src="./assets/da-pro-3.jpeg " />
           <!-- Stats Strip -->
           <div
             class="grid grid-cols-3 divide-x divide-x-reverse divide-surface-bright bg-surface-container-high py-4 text-center border-t border-outline-variant/10">
@@ -206,7 +206,7 @@
               <p class="text-on-surface-variant text-[10px] md:text-xs">📅 مدة الكورس</p>
             </div>
             <div class="px-2">
-              <p class="text-secondary-container font-black text-lg md:text-xl">16 جلسة</p>
+              <p class="text-secondary-container font-black text-lg md:text-xl">16 محاضرة</p>
               <p class="text-on-surface-variant text-[10px] md:text-xs">🎥 لايف مباشر</p>
             </div>
             <div class="px-2">
@@ -314,26 +314,103 @@
             </button>
           </form> -->
 
-          <!-- instapay link -->
-          <div class="mt-4 w-full">
-            <a href="#" target="_blank">
-              <img src="./assets/instapay.jpeg" alt="Instapay Payment"
-                class="w-full h-auto rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 border border-outline-variant/20" />
-            </a>
+          <!-- Payment Tabs -->
+          <div class="mt-8">
+            <div class="flex border-b border-outline-variant/20 mb-6">
+              <button onclick="switchTab('visa')" id="tab-visa"
+                class="flex-1 py-3 font-bold text-center border-b-2 border-tertiary text-tertiary transition-all">
+                <i class="fa-solid fa-credit-card ml-2"></i> بطاقة بنكية (Visa/Mastercard)
+              </button>
+              <button onclick="switchTab('instapay')" id="tab-instapay"
+                class="flex-1 py-3 font-bold text-center border-b-2 border-transparent text-on-surface-variant hover:text-white transition-all">
+                <i class="fa-solid fa-mobile-screen-button ml-2"></i> InstaPay
+              </button>
+            </div>
+
+            <!-- Visa Tab Content -->
+            <div id="content-visa" class="space-y-6">
+              <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 text-center">
+                <p class="text-on-surface-variant mb-6 text-sm">ادفع بأمان باستخدام بطاقتك البنكية (فيزا أو ماستركارد)
+                  من خلال بوابة دفع مشفرة.</p>
+                <a href="https://accept.paymobsolutions.com/standalone?ref=p_LRR2RlNXa1c1d095dHo1Uzg5QjBEYnNvUT09X0NldUREdlI3NFl3UGE0ZVd3WFQvYVE9PQ"
+                  target="_blank"
+                  class="w-full bg-tertiary py-4 rounded-lg text-on-tertiary font-black text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-tertiary/20 flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-lock text-sm"></i>
+                  دفع بالبطاقة البنكية الآن
+                </a>
+              </div>
+            </div>
+
+            <!-- InstaPay Tab Content -->
+            <div id="content-instapay" class="hidden space-y-6 animate-fade-in">
+              <div class="space-y-4">
+                <a href="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI" target="_blank" class="block group">
+                  <img src="./assets/da-pro-instapay.jpeg" alt="Instapay Payment"
+                    class="w-full h-auto rounded-lg shadow-xl group-hover:scale-[1.01] transition-transform duration-300 border border-outline-variant/20" />
+                </a>
+
+                <a href="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI" target="_blank"
+                  class="w-full bg-secondary-container py-4 rounded-lg text-on-secondary-container font-black text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-secondary-container/20 flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-bolt"></i>
+                  دفع سريع عبر تطبيق InstaPay
+                </a>
+
+                <div class="relative group">
+                  <label class="block text-secondary-container text-xs font-bold mb-2 mr-1">رابط الدفع (للنسخ)</label>
+                  <div class="flex gap-2">
+                    <input id="instapay-link" type="text" readonly value="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI"
+                      class="flex-1 bg-surface-container-highest border border-outline-variant/10 rounded-lg p-3 text-white text-xs focus:outline-none" />
+                    <button onclick="copyLink()"
+                      class="bg-surface-bright px-4 rounded-lg text-white hover:bg-outline transition-colors">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WhatsApp Confirmation -->
+              <div class="bg-surface-container-high border border-[#25D366]/30 rounded-xl p-5 text-center shadow-lg">
+                <p class="text-white font-bold mb-3 text-sm">إرسال إيصال التحويل لتأكيد الحجز</p>
+                <a href="https://wa.me/201000143085" target="_blank"
+                  class="w-full bg-[#25D366] text-white py-4 rounded-lg font-black text-base hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#25D366]/20 flex items-center justify-center gap-2">
+                  <i class="fa-brands fa-whatsapp text-xl"></i>
+                  أرسل الإيصال عبر واتساب
+                </a>
+              </div>
+            </div>
           </div>
 
-          <!-- WhatsApp Confirmation Instructions -->
-          <div class="mt-6 bg-surface-container-high border border-[#25D366]/30 rounded-xl p-5 text-center shadow-lg">
-            <div class="flex items-center justify-center gap-2 text-white font-bold mb-3 text-sm md:text-base">
-              <span class="material-symbols-outlined text-[#25D366]">info</span>
-              بعد الدفع، برجاء إرسال إيصال التحويل لتأكيد حجزك
-            </div>
-            <a href="https://wa.me/201000143085" target="_blank"
-              class="w-full bg-[#25D366] text-white py-4 rounded-lg font-black text-base hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#25D366]/20 flex items-center justify-center gap-2 mt-4">
-              <i class="fa-brands fa-whatsapp text-xl"></i>
-              أرسل الإيصال عبر واتساب
-            </a>
-          </div>
+          <script>
+            function switchTab(tab) {
+              const visaBtn = document.getElementById('tab-visa');
+              const instapayBtn = document.getElementById('tab-instapay');
+              const visaContent = document.getElementById('content-visa');
+              const instapayContent = document.getElementById('content-instapay');
+
+              if (tab === 'visa') {
+                visaBtn.classList.add('border-tertiary', 'text-tertiary');
+                visaBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+                instapayBtn.classList.remove('border-tertiary', 'text-tertiary');
+                instapayBtn.classList.add('border-transparent', 'text-on-surface-variant');
+                visaContent.classList.remove('hidden');
+                instapayContent.classList.add('hidden');
+              } else {
+                instapayBtn.classList.add('border-tertiary', 'text-tertiary');
+                instapayBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+                visaBtn.classList.remove('border-tertiary', 'text-tertiary');
+                visaBtn.classList.add('border-transparent', 'text-on-surface-variant');
+                instapayContent.classList.remove('hidden');
+                visaContent.classList.add('hidden');
+              }
+            }
+
+            function copyLink() {
+              const linkInput = document.getElementById('instapay-link');
+              linkInput.select();
+              document.execCommand('copy');
+              alert('تم نسخ الرابط بنجاح!');
+            }
+          </script>
 
           <!-- Trust Signals -->
           <!-- <div class="mt-8 pt-6 border-t border-outline-variant/10 flex justify-around opacity-70">
