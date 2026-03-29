@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Data Analysis Pro | سياسة الخصوصية</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500&amp;family=Cairo:wght@700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4e9a8de8b8.js" crossorigin="anonymous"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#2e394d",
+            "tertiary": "#e9c400",
+            "on-tertiary": "#3a3000",
+            "error-container": "#93000a",
+            "secondary-fixed": "#00fbfb",
+            "surface-container-highest": "#2a3548",
+            "outline": "#8f9097",
+            "secondary-fixed-dim": "#00dddd",
+            "on-primary-container": "#758096",
+            "surface-dim": "#071325",
+            "surface-tint": "#bbc7df",
+            "tertiary-fixed-dim": "#e9c400",
+            "background": "#071325",
+            "on-tertiary-fixed": "#221b00",
+            "on-primary-fixed": "#101c2e",
+            "on-surface": "#d7e3fc",
+            "secondary": "#ffffff",
+            "tertiary-fixed": "#ffe16d",
+            "on-secondary-fixed-variant": "#004f4f",
+            "primary": "#bbc7df",
+            "surface": "#071325",
+            "surface-variant": "#2a3548",
+            "error": "#ffb4ab",
+            "on-primary": "#253144",
+            "primary-fixed-dim": "#bbc7df",
+            "on-secondary-fixed": "#002020",
+            "secondary-container": "#00fbfb",
+            "outline-variant": "#45474c",
+            "on-secondary-container": "#007070",
+            "inverse-primary": "#535f74",
+            "surface-container-low": "#101c2e",
+            "on-tertiary-fixed-variant": "#544600",
+            "tertiary-container": "#c8a900",
+            "on-surface-variant": "#c5c6cd",
+            "surface-container-lowest": "#030e20",
+            "on-secondary": "#003737",
+            "primary-container": "#0a1628",
+            "inverse-on-surface": "#253144",
+            "on-primary-fixed-variant": "#3c475b",
+            "primary-fixed": "#d7e3fc",
+            "on-background": "#d7e3fc",
+            "inverse-surface": "#d7e3fc",
+            "on-tertiary-container": "#4b3e00",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "surface-container-high": "#1f2a3d",
+            "surface-container": "#142032"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans", "Tajawal"],
+            "body": ["Inter", "Tajawal"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .glass-panel {
+      background: rgba(16, 28, 46, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+  <!-- TopNavBar -->
+  <header class="fixed top-0 w-full z-50 bg-[#071325]/40 backdrop-blur-xl shadow-[0_40px_40px_rgba(215,227,252,0.08)]">
+    <nav
+      class="flex flex-row-reverse justify-between items-center px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans','Tajawal'] font-bold text-right">
+      <div class="text-2xl font-black text-white tracking-tighter">Data Analysis Pro</div>
+      <div class="hidden md:flex flex-row-reverse gap-8 items-center">
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="{{ route('dapro.index') }}#faq">الأسئلة</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#testimonials">قصص النجاح</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#pricing">الأسعار</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#instructor">المدرب</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#roadmap">المسار</a>
+        <a class="text-[#FFD700] border-b-2 border-[#FFD700] pb-1" href="#">الرئيسية</a>
+      </div>
+      <a href="{{ route('dapro.checkout') }}"
+        class="bg-tertiary text-on-tertiary px-6 py-2 rounded-md font-bold hover:scale-95 active:scale-90 duration-200 transition-all flex items-center justify-center">
+        سجل الآن
+      </a>
+    </nav>
+  </header>
+  <main class="min-h-screen pt-24 pb-24">
+    <!-- Hero Title Section -->
+    <header class="max-w-4xl mx-auto px-6 mb-20 text-center">
+      <h1
+        class="text-6xl md:text-7xl font-black pb-8 mb-6 tracking-tight bg-gradient-to-l from-primary via-tertiary to-secondary bg-clip-text text-transparent">
+        سياسة الخصوصية
+      </h1>
+      <p class="text-secondary font-medium tracking-widest uppercase">
+        تاريخ التحديث: ١ مايو ٢٠٢٦
+      </p>
+      <div class="mt-8 h-1 w-24 bg-primary mx-auto rounded-full"></div>
+    </header>
+    <!-- Content Canvas -->
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="glass-panel p-10 md:p-16 rounded-xl border border-outline-variant/20 relative overflow-hidden">
+        <!-- Data Pulse Decorative Element -->
+        <div
+          class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-30">
+        </div>
+        <article class="space-y-16 relative z-10">
+          <!-- Section 1: Introduction -->
+          <section class="group">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="material-symbols-outlined text-primary text-3xl" data-icon="info">info</span>
+              <h2 class="text-2xl font-extrabold text-primary tracking-wide">مقدمة</h2>
+            </div>
+            <div class="text-on-surface/80 leading-relaxed text-lg space-y-4">
+              <p>أهلاً بيك في DATA ANALYSIS PRO. إحنا مقدرين جداً ثقتك فينا وبنعتبر حماية بياناتك هي أولويتنا الأولى.
+                السياسة دي موجودة عشان نوضحلك بكل شفافية إحنا بنتعامل إزاي مع معلوماتك.</p>
+              <p>لما بتستخدم منصتنا، إنت بتأمننا على داتا مهمة، وإحنا ملتزمين إننا نكون قد المسؤولية دي ونحافظ على
+                خصوصيتك وفقاً لأعلى المعايير التقنية والقانونية.</p>
+            </div>
+          </section>
+          <!-- Section 2: Data Collection -->
+          <section class="group">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="material-symbols-outlined text-primary text-3xl" data-icon="database">database</span>
+              <h2 class="text-2xl font-extrabold text-primary tracking-wide">البيانات التي نجمعها</h2>
+            </div>
+            <div class="text-on-surface/80 leading-relaxed text-lg">
+              <ul class="space-y-4 list-none">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
+                  <span><strong>معلومات الحساب:</strong> زي اسمك، إيميلك، ورقم تليفونك اللي بتسجل بيهم.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
+                  <span><strong>بيانات التحليل:</strong> الملفات والداتا اللي بترفعها عشان السيستم بتاعنا يحللها.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
+                  <span><strong>معلومات تقنية:</strong> عنوان الـ IP، نوع المتصفح، وطريقة تفاعلك مع المنصة عشان نحسن
+                    تجربتك.</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- Section 3: Usage -->
+          <section class="group">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="material-symbols-outlined text-primary text-3xl" data-icon="insights">insights</span>
+              <h2 class="text-2xl font-extrabold text-primary tracking-wide">كيفية استخدام بياناتك</h2>
+            </div>
+            <div class="text-on-surface/80 leading-relaxed text-lg space-y-4">
+              <p>إحنا مش بنلم داتا وخلاص، إحنا بنستخدمها عشان هدف واحد بس: إننا نقدملك أحسن خدمة تحليل بيانات ممكنة.</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div class="bg-surface-container-high p-6 rounded-lg border-r-4 border-secondary-container">
+                  <h3 class="text-secondary font-bold mb-2">تطوير المنصة</h3>
+                  <p class="text-sm">بنفهم إنت محتاج إيه وبنطور أدواتنا بناءً على استخدامك الفعلي.</p>
+                </div>
+                <div class="bg-surface-container-high p-6 rounded-lg border-r-4 border-secondary-container">
+                  <h3 class="text-secondary font-bold mb-2">الدعم الفني</h3>
+                  <p class="text-sm">عشان نرد على استفساراتك ونحل أي مشكلة تقنية بتقابلك بسرعة.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Section 4: Data Protection -->
+          <section class="group">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="material-symbols-outlined text-primary text-3xl" data-icon="shield_lock">shield_lock</span>
+              <h2 class="text-2xl font-extrabold text-primary tracking-wide">حماية البيانات</h2>
+            </div>
+            <div class="text-on-surface/80 leading-relaxed text-lg space-y-4">
+              <p>بياناتك متأمنة بتشفير End-to-End. يعني مفيش حد يقدر يوصل للداتا بتاعتك غيرك إنت. بنستخدم سيرفرات مؤمنة
+                بأحدث بروتوكولات الحماية العالمية عشان نضمن إن مفيش أي تسريب يحصل.</p>
+              <div
+                class="flex items-center gap-3 p-4 bg-tertiary-container/10 rounded-lg text-tertiary border border-tertiary-container/20">
+                <span class="material-symbols-outlined" data-icon="verified_user"
+                  style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                <span class="font-bold">تشفير بمعيار AES-256 لضمان أقصى درجات السرية.</span>
+              </div>
+            </div>
+          </section>
+          <!-- Section 5: Cookies -->
+          <section class="group">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="material-symbols-outlined text-primary text-3xl" data-icon="cookie">cookie</span>
+              <h2 class="text-2xl font-extrabold text-primary tracking-wide">ملفات تعريف الارتباط</h2>
+            </div>
+            <p class="text-on-surface/80 leading-relaxed text-lg">بناخد "كوكي" خفيف عشان السيستم يفتكر تفضيلاتك ويسهل
+              عليك الدخول كل مرة. تقدر طبعاً تقفل الخاصية دي من إعدادات متصفحك، بس ده ممكن يخلي بعض ميزات الموقع متشتغلش
+              بكفاءة.</p>
+          </section>
+          <!-- Section 6: Contact Us -->
+          <section class="group">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="material-symbols-outlined text-primary text-3xl"
+                data-icon="contact_support">contact_support</span>
+              <h2 class="text-2xl font-extrabold text-primary tracking-wide">اتصل بنا</h2>
+            </div>
+            <div
+              class="bg-surface-container-high p-8 rounded-xl border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div class="text-center md:text-right">
+                <p class="text-lg mb-2">عندك أي سؤال بخصوص خصوصيتك؟</p>
+                <p class="text-on-surface/60">تواصل معانا وفريقنا القانوني هيرد عليك فوراً.</p>
+              </div>
+              <a class="bg-primary text-on-primary px-8 py-4 rounded-full font-black hover:scale-105 transition-transform duration-200"
+                href="mailto:privacy@dataanalysispro.com">
+                مراسلة الفريق القانوني
+              </a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+  <!-- Floating WhatsApp Button -->
+  <a class="fixed bottom-6 left-6 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce flex items-center justify-center border-2 border-white/20"
+    href="https://wa.me/201000143085" target="_blank">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <footer class="bg-[#030E20] border-t border-white/5 pt-20 pb-12">
+    <div class="max-w-7xl w-full mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-right">
+        <!-- Navigation Menu -->
+        <div class="col-span-1">
+          <h4 class="text-white font-bold mb-6">روابط سريعة</h4>
+          <ul class="space-y-4 text-on-surface-variant">
+            <li><a href="{{ route('dapro.index') }}#" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
+            <li><a href="{{ route('dapro.index') }}#roadmap" class="hover:text-tertiary transition-colors">مسار الكورس</a></li>
+            <li><a href="{{ route('dapro.index') }}#pricing" class="hover:text-tertiary transition-colors">أسعار الاشتراك</a></li>
+            <li><a href="{{ route('dapro.index') }}#instructor" class="hover:text-tertiary transition-colors">تعرف على المدرب</a></li>
+            <li><a href="{{ route('dapro.index') }}#testimonials" class="hover:text-tertiary transition-colors">قصص النجاح</a></li>
+          </ul>
+        </div>
+        <!-- Support -->
+        <div class="col-span-1">
+          <h4 class="text-white font-bold mb-6">الدعم والمساعدة</h4>
+          <ul class="space-y-4 text-on-surface-variant">
+            <li><a href="{{ route('dapro.index') }}#faq" class="hover:text-tertiary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="https://wa.me/201000143085" class="hover:text-tertiary transition-colors">تواصل معنا واتساب</a>
+            </li>
+            <li><a href="{{ route('dapro.privacy') }}" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="{{ route('dapro.refund') }}" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a></li>
+            <li><a href="{{ route('dapro.terms') }}" class="hover:text-tertiary transition-colors">شروط الاستخدام</a></li>
+          </ul>
+        </div>
+        <!-- Brand Info -->
+        <div class="col-span-1 md:col-span-1">
+          <div class="text-2xl font-black text-white mb-6">Data Analysis Pro</div>
+          <p class="text-on-surface-variant mb-8 leading-relaxed">
+            أول برنامج تعليمي عربي متكامل يهدف لتمكينك من مجال تحليل البيانات بأحدث الأدوات والتقنيات العالمية.
+          </p>
+          <!-- Social Media Icons -->
+          <div class="flex flex-row-reverse gap-4">
+            <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+              href="https://www.facebook.com/eraapro" title="Facebook">
+              <i class="fa-brands fa-facebook-f text-xl"></i>
+            </a>
+            <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+              href="https://wa.me/201000143085" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+            <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+              href="https://www.linkedin.com/company/eraapro/" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in text-xl"></i>
+            </a>
+            <!-- <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#26A5E4] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+                href="#" title="Telegram">
+                <i class="fa-brands fa-telegram text-xl"></i>
+              </a> -->
+          </div>
+        </div>
+        <!-- Newsletter/Contact -->
+        <!-- <div class="col-span-1">
+            <h4 class="text-white font-bold mb-6">احصل على تحديثاتنا</h4>
+            <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+              اشترك في القائمة البريدية لتحصل على نصائح أسبوعية في تحليل البيانات.
+            </p>
+            <div class="flex flex-row-reverse gap-2">
+              <input type="email" placeholder="بريدك الإلكتروني" class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-tertiary text-sm">
+              <button class="bg-tertiary text-on-tertiary px-4 py-2 rounded-lg font-bold hover:brightness-110 transition-all text-sm">اشترك</button>
+            </div>
+          </div> -->
+      </div>
+      <!-- Bottom Footer -->
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row-reverse justify-between items-center gap-6">
+        <p class="text-on-surface-variant text-sm text-center md:text-right">
+          © 2026 Data Analysis Pro. جميع الحقوق محفوظة.
+        </p>
+        <p class="text-on-surface-variant text-sm text-center md:text-left">
+          صنع بكل ❤️ لمجتمع محللي البيانات العربي
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

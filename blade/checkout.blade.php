@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Data Analysis Pro - إتمام التسجيل</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500&amp;family=Cairo:wght@700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4e9a8de8b8.js" crossorigin="anonymous"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#2e394d",
+            "tertiary": "#e9c400",
+            "on-tertiary": "#3a3000",
+            "error-container": "#93000a",
+            "secondary-fixed": "#00fbfb",
+            "surface-container-highest": "#2a3548",
+            "outline": "#8f9097",
+            "secondary-fixed-dim": "#00dddd",
+            "on-primary-container": "#758096",
+            "surface-dim": "#071325",
+            "surface-tint": "#bbc7df",
+            "tertiary-fixed-dim": "#e9c400",
+            "background": "#071325",
+            "on-tertiary-fixed": "#221b00",
+            "on-primary-fixed": "#101c2e",
+            "on-surface": "#d7e3fc",
+            "secondary": "#ffffff",
+            "tertiary-fixed": "#ffe16d",
+            "on-secondary-fixed-variant": "#004f4f",
+            "primary": "#bbc7df",
+            "surface": "#071325",
+            "surface-variant": "#2a3548",
+            "error": "#ffb4ab",
+            "on-primary": "#253144",
+            "primary-fixed-dim": "#bbc7df",
+            "on-secondary-fixed": "#002020",
+            "secondary-container": "#00fbfb",
+            "outline-variant": "#45474c",
+            "on-secondary-container": "#007070",
+            "inverse-primary": "#535f74",
+            "surface-container-low": "#101c2e",
+            "on-tertiary-fixed-variant": "#544600",
+            "tertiary-container": "#c8a900",
+            "on-surface-variant": "#c5c6cd",
+            "surface-container-lowest": "#030e20",
+            "on-secondary": "#003737",
+            "primary-container": "#0a1628",
+            "inverse-on-surface": "#253144",
+            "on-primary-fixed-variant": "#3c475b",
+            "primary-fixed": "#d7e3fc",
+            "on-background": "#d7e3fc",
+            "inverse-surface": "#d7e3fc",
+            "on-tertiary-container": "#4b3e00",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "surface-container-high": "#1f2a3d",
+            "surface-container": "#142032"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans", "Tajawal"],
+            "body": ["Inter", "Tajawal"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .pulsing-urgency {
+      background: linear-gradient(90deg, #93000a, #ffb4ab, #93000a);
+      background-size: 200% 200%;
+      animation: gradient-shift 3s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .glow-gold {
+      box-shadow: 0 0 30px rgba(233, 196, 0, 0.15);
+    }
+
+    .glass-header {
+      background: rgba(7, 19, 37, 0.4);
+      backdrop-filter: blur(20px);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-nav {
+      background: rgba(7, 19, 37, 0.4);
+      backdrop-filter: blur(20px);
+    }
+
+    .kinetic-border {
+      position: relative;
+    }
+
+    .kinetic-border::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: #e9c400;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .kinetic-border:hover::after {
+      opacity: 1;
+    }
+
+    .bg-mist {
+      background: linear-gradient(180deg, rgba(187, 199, 223, 0.15) 0%, rgba(10, 22, 40, 0) 100%);
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background text-on-surface font-body antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+  <!-- URGENCY BANNER -->
+  <div class="pulsing-urgency sticky top-0 z-[60] py-4 px-4 text-center shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4 text-white font-bold">
+      <span class="text-sm md:text-base">🔥 الحق العرض — الكورس هيبدأ 1 مايو و الاماكن محدودة!</span>
+      <!-- <div class="flex items-center gap-3 text-xs md:text-sm bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">
+        <div class="flex flex-col items-center"><span>02</span><span class="text-[10px] opacity-80">يوم</span></div>
+        <span class="opacity-50">|</span>
+        <div class="flex flex-col items-center"><span>14</span><span class="text-[10px] opacity-80">ساعة</span></div>
+        <span class="opacity-50">|</span>
+        <div class="flex flex-col items-center"><span>45</span><span class="text-[10px] opacity-80">دقيقة</span></div>
+        <span class="opacity-50">|</span>
+        <div class="flex flex-col items-center"><span>12</span><span class="text-[10px] opacity-80">ثانية</span></div>
+      </div> -->
+    </div>
+  </div>
+  <!-- HEADER -->
+  <header
+    class="glass-header sticky top-[48px] md:top-[40px] z-50 px-6 py-4 w-full flex flex-col-reverse gap-4 md:flex-row-reverse justify-between items-center border-b border-surface-bright/30">
+    <div class="font-headline text-right font-black tracking-tighter flex items-center gap-2">
+      <span class="text-xl text-white">Data Analysis Pro</span>
+    </div>
+    <div class="flex items-center gap-2 text-white font-bold text-sm md:text-base">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+      <span>دفع آمن ومشفر 100%</span>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 md:px-16 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- RIGHT COLUMN: CONTENT (WIDER) -->
+      <div class="lg:col-span-7 space-y-8 order-2 lg:order-1">
+        <!-- Hero Course Card -->
+        <div class="relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/20">
+          <div
+            class="absolute top-4 right-4 z-10 bg-error-container text-white font-black px-4 py-2 rounded-lg shadow-xl animate-bounce">
+            🔥 خصم 70%
+          </div>
+          <img alt="Course Preview"
+            class="w-full aspect-video object-cover object-top opacity-80 hover:opacity-100 transition-opacity"
+            src="{{ asset('images/da-pro-3.jpeg ') }}" />
+          <!-- Stats Strip -->
+          <div
+            class="grid grid-cols-3 divide-x divide-x-reverse divide-surface-bright bg-surface-container-high py-4 text-center border-t border-outline-variant/10">
+            <div class="px-2">
+              <p class="text-secondary-container font-black text-lg md:text-xl">8 أسابيع</p>
+              <p class="text-on-surface-variant text-[10px] md:text-xs">📅 مدة الكورس</p>
+            </div>
+            <div class="px-2">
+              <p class="text-secondary-container font-black text-lg md:text-xl">16 محاضرة</p>
+              <p class="text-on-surface-variant text-[10px] md:text-xs">🎥 لايف مباشر</p>
+            </div>
+            <div class="px-2">
+              <p class="text-secondary-container font-black text-lg md:text-xl">+2000</p>
+              <p class="text-on-surface-variant text-[10px] md:text-xs">👥 طالب اتخرجوا</p>
+            </div>
+          </div>
+        </div>
+        <!-- Bonuses Section -->
+        <section>
+          <h3 class="text-tertiary font-black text-2xl mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined">redeem</span>
+            كل ده معاك مجاناً
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Bonus 1: Main Course Content -->
+            <div
+              class="p-5 rounded-xl bg-surface-container-high border-r-4 border-secondary-container hover:bg-surface-container-highest transition-colors">
+              <span class="material-symbols-outlined text-secondary-container text-3xl mb-3">analytics</span>
+              <h4 class="font-bold text-lg text-white mb-1">دبلومة تحليل البيانات الكاملة</h4>
+              <p class="text-on-surface-variant text-sm mb-3">من الصفر حتى الاحتراف في Excel, PowerBI</p>
+              <span
+                class="text-secondary-container text-xs font-bold bg-secondary-container/10 px-2 py-1 rounded">المحتوى
+                الأساسي</span>
+            </div>
+            <!-- Bonus 2 -->
+            <div
+              class="p-5 rounded-xl bg-surface-container-high border-r-4 border-tertiary hover:bg-surface-container-highest transition-colors">
+              <span class="material-symbols-outlined text-tertiary text-3xl mb-3">description</span>
+              <h4 class="font-bold text-lg text-white mb-1">ورشة عمل التقارير الاحترافية</h4>
+              <p class="text-on-surface-variant text-sm mb-3">ازاي تعمل Report يبهر مديرك في الشغل</p>
+              <span class="text-tertiary text-xs font-bold">مجاناً ✅</span>
+            </div>
+            <!-- Bonus 3 -->
+            <div
+              class="p-5 rounded-xl bg-surface-container-high border-r-4 border-tertiary hover:bg-surface-container-highest transition-colors">
+              <span class="material-symbols-outlined text-tertiary text-3xl mb-3">science</span>
+              <h4 class="font-bold text-lg text-white mb-1">أساسيات Data Science</h4>
+              <p class="text-on-surface-variant text-sm mb-3">مقدمة مكثفة لعالم تعلم الآلة والذكاء الاصطناعي</p>
+              <span class="text-tertiary text-xs font-bold">مجاناً ✅</span>
+            </div>
+            <!-- Bonus 4 -->
+            <div
+              class="p-5 rounded-xl bg-surface-container-high border-r-4 border-tertiary hover:bg-surface-container-highest transition-colors">
+              <span class="material-symbols-outlined text-tertiary text-3xl mb-3">groups</span>
+              <h4 class="font-bold text-lg text-white mb-1">Eraa Data Camp</h4>
+              <p class="text-on-surface-variant text-sm mb-3">انضمام لمجتمعنا الخاص للتدريب العملي</p>
+              <span class="text-tertiary text-xs font-bold">مجاناً ✅</span>
+            </div>
+          </div>
+        </section>
+        <!-- Refund Banner -->
+        <!-- <div class="p-6 rounded-xl bg-surface-container border border-outline-variant/10 flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary-container text-4xl shrink-0"
+            style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          <div>
+            <h4 class="font-bold text-secondary-container mb-1">ضمان استرداد الأموال</h4>
+            <p class="text-on-surface leading-relaxed text-sm md:text-base">
+              لو حضرت أول أسبوعين وحسيت إن الكورس مش مناسب ليك. هنرجعلك فلوسك كاملة بدون أي أسئلة. احنا واثقين في اللي
+              بنقدمه!
+            </p>
+          </div>
+        </div> -->
+      </div>
+      <!-- LEFT COLUMN: FORM (NARROWER, STICKY) -->
+      <aside class="lg:col-span-5 lg:sticky lg:top-32 order-1 lg:order-2">
+        <div
+          class="bg-surface-container-high p-8 rounded-xl border-2 border-secondary-container/20 glow-gold shadow-2xl">
+          <!-- Pricing -->
+          <div class="text-center mb-8">
+            <div class="inline-block bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-sm font-bold mb-4">
+              خصم 70% لفترة محدودة 🔥
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+              <span class="text-on-surface-variant line-through text-2xl font-label">16,500 EGP</span>
+              <span class="text-white font-black text-5xl tracking-tighter">4,500 <span
+                  class="text-xl">EGP</span></span>
+            </div>
+            <p class="text-on-surface-variant text-xs mt-2 italic">* السعر شامل الضريبة والوصول مدى الحياة</p>
+          </div>
+          <!-- Enrollment Form -->
+          <!-- <form action="#" class="space-y-5">
+            <div class="space-y-2">
+              <label class="block text-secondary-container text-sm font-bold mr-1">الاسم الكامل</label>
+              <input
+                class="w-full bg-surface-container-highest border border-outline-variant/10 rounded-lg p-4 text-white focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20"
+                placeholder="اكتب اسمك الثلاثي" type="text" />
+            </div>
+            <div class="space-y-2">
+              <label class="block text-secondary-container text-sm font-bold mr-1">البريد الإلكتروني</label>
+              <input
+                class="w-full bg-surface-container-highest border border-outline-variant/10 rounded-lg p-4 text-white focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
+                dir="ltr" placeholder="example@mail.com" type="email" />
+            </div>
+            <div class="space-y-2">
+              <label class="block text-secondary-container text-sm font-bold mr-1">رقم الموبايل</label>
+              <input
+                class="w-full bg-surface-container-highest border border-outline-variant/10 rounded-lg p-4 text-white focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
+                dir="ltr" placeholder="01xxxxxxxxx" type="tel" />
+            </div>
+            <button
+              class="w-full bg-tertiary py-5 rounded-lg text-on-tertiary font-black text-base md:text-xl hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-tertiary/20 flex items-center justify-center gap-2 mt-4"
+              type="submit">
+              سجّل دلوقتي و احجز مكانك 🔥
+            </button>
+          </form> -->
+
+          <!-- Payment Tabs -->
+          <div class="mt-8">
+            <div class="flex border-b border-outline-variant/20 mb-6">
+              <button onclick="switchTab('visa')" id="tab-visa"
+                class="flex-1 py-3 font-bold text-center border-b-2 border-tertiary text-tertiary transition-all">
+                <i class="fa-solid fa-credit-card ml-2"></i> بطاقة بنكية (Visa/Mastercard)
+              </button>
+              <button onclick="switchTab('instapay')" id="tab-instapay"
+                class="flex-1 py-3 font-bold text-center border-b-2 border-transparent text-on-surface-variant hover:text-white transition-all">
+                <i class="fa-solid fa-mobile-screen-button ml-2"></i> InstaPay
+              </button>
+            </div>
+
+            <!-- Visa Tab Content -->
+            <div id="content-visa" class="space-y-6">
+              <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 text-center">
+                <p class="text-on-surface-variant mb-6 text-sm">ادفع بأمان باستخدام بطاقتك البنكية (فيزا أو ماستركارد)
+                  من خلال بوابة دفع مشفرة.</p>
+                <a href="https://accept.paymobsolutions.com/standalone?ref=p_LRR2RlNXa1c1d095dHo1Uzg5QjBEYnNvUT09X0NldUREdlI3NFl3UGE0ZVd3WFQvYVE9PQ"
+                  target="_blank"
+                  class="w-full bg-tertiary py-4 rounded-lg text-on-tertiary font-black text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-tertiary/20 flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-lock text-sm"></i>
+                  دفع بالبطاقة البنكية الآن
+                </a>
+              </div>
+            </div>
+
+            <!-- InstaPay Tab Content -->
+            <div id="content-instapay" class="hidden space-y-6 animate-fade-in">
+              <div class="space-y-4">
+                <a href="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI" target="_blank" class="block group">
+                  <img src="{{ asset('images/da-pro-instapay.jpeg') }}" alt="Instapay Payment"
+                    class="w-full h-auto rounded-lg shadow-xl group-hover:scale-[1.01] transition-transform duration-300 border border-outline-variant/20" />
+                </a>
+
+                <a href="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI" target="_blank"
+                  class="w-full bg-secondary-container py-4 rounded-lg text-on-secondary-container font-black text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-secondary-container/20 flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-bolt"></i>
+                  دفع سريع عبر تطبيق InstaPay
+                </a>
+
+                <div class="relative group">
+                  <label class="block text-secondary-container text-xs font-bold mb-2 mr-1">رابط الدفع (للنسخ)</label>
+                  <div class="flex gap-2">
+                    <input id="instapay-link" type="text" readonly value="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI"
+                      class="flex-1 bg-surface-container-highest border border-outline-variant/10 rounded-lg p-3 text-white text-xs focus:outline-none" />
+                    <button onclick="copyLink()"
+                      class="bg-surface-bright px-4 rounded-lg text-white hover:bg-outline transition-colors">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WhatsApp Confirmation -->
+              <div class="bg-surface-container-high border border-[#25D366]/30 rounded-xl p-5 text-center shadow-lg">
+                <p class="text-white font-bold mb-3 text-sm">إرسال إيصال التحويل لتأكيد الحجز</p>
+                <a href="https://wa.me/201000143085" target="_blank"
+                  class="w-full bg-[#25D366] text-white py-4 rounded-lg font-black text-base hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#25D366]/20 flex items-center justify-center gap-2">
+                  <i class="fa-brands fa-whatsapp text-xl"></i>
+                  أرسل الإيصال عبر واتساب
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchTab(tab) {
+              const visaBtn = document.getElementById('tab-visa');
+              const instapayBtn = document.getElementById('tab-instapay');
+              const visaContent = document.getElementById('content-visa');
+              const instapayContent = document.getElementById('content-instapay');
+
+              if (tab === 'visa') {
+                visaBtn.classList.add('border-tertiary', 'text-tertiary');
+                visaBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+                instapayBtn.classList.remove('border-tertiary', 'text-tertiary');
+                instapayBtn.classList.add('border-transparent', 'text-on-surface-variant');
+                visaContent.classList.remove('hidden');
+                instapayContent.classList.add('hidden');
+              } else {
+                instapayBtn.classList.add('border-tertiary', 'text-tertiary');
+                instapayBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+                visaBtn.classList.remove('border-tertiary', 'text-tertiary');
+                visaBtn.classList.add('border-transparent', 'text-on-surface-variant');
+                instapayContent.classList.remove('hidden');
+                visaContent.classList.add('hidden');
+              }
+            }
+
+            function copyLink() {
+              const linkInput = document.getElementById('instapay-link');
+              linkInput.select();
+              document.execCommand('copy');
+              alert('تم نسخ الرابط بنجاح!');
+            }
+          </script>
+
+          <!-- Trust Signals -->
+          <!-- <div class="mt-8 pt-6 border-t border-outline-variant/10 flex justify-around opacity-70">
+            <div class="flex flex-col items-center gap-1">
+              <span class="material-symbols-outlined text-secondary-container">verified</span>
+              <span class="text-[10px] font-label">SSL Secure</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <span class="material-symbols-outlined text-secondary-container">group</span>
+              <span class="text-[10px] font-label">+2000 Student</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <span class="material-symbols-outlined text-secondary-container">thumb_up</span>
+              <span class="text-[10px] font-label">Satisfaction</span>
+            </div>
+          </div> -->
+          <!-- Instructor Card -->
+          <div
+            class="mt-8 flex items-center gap-4 p-4 rounded-lg bg-surface-container border border-outline-variant/10">
+            <img alt="Instructor" class="w-14 h-14 rounded-full border-2 border-tertiary object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5LROCZyYkIvSLaydInuDngSFKC8XCBR2wdlK2DqBNV0f6Bnh-VQpC-YCqUUGg8IMwzphThcM-0QUTlLTFMa11AP8nzSr09LqWoP5cW-bSA8WYNwOdLdhK-lByp2nxvaszkPw0M6zSJB_9DqoBfj1fkiIDfL423ZTt4FlbK703zdQcBD5vJzuwBHt9DraBKgZnZKJjTUKbNFOvdmr9403EFN1-0N97Rwp-i_DcoeDTlfOD79oCbZ3-4irbi7dpkiY6I9gcZZT0BHM" />
+            <div>
+              <p class="text-white font-bold">محمد عبد الفتاح</p>
+              <p class="font-label text-on-surface-variant text-sm">Senior Data Analyst &amp; Instructor</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <!-- Floating WhatsApp Button -->
+  <a class="fixed bottom-6 left-6 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce flex items-center justify-center border-2 border-white/20"
+    href="https://wa.me/201000143085" target="_blank">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+  <footer class="bg-[#030E20] border-t border-white/5 pt-20 pb-12">
+    <div class="max-w-7xl w-full mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-right">
+        <!-- Navigation Menu -->
+        <div class="col-span-1">
+          <h4 class="text-white font-bold mb-6">روابط سريعة</h4>
+          <ul class="space-y-4 text-on-surface-variant">
+            <li><a href="{{ route('dapro.index') }}#" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
+            <li><a href="{{ route('dapro.index') }}#roadmap" class="hover:text-tertiary transition-colors">مسار الكورس</a></li>
+            <li><a href="{{ route('dapro.index') }}#pricing" class="hover:text-tertiary transition-colors">أسعار الاشتراك</a></li>
+            <li><a href="{{ route('dapro.index') }}#instructor" class="hover:text-tertiary transition-colors">تعرف على المدرب</a></li>
+            <li><a href="{{ route('dapro.index') }}#testimonials" class="hover:text-tertiary transition-colors">قصص النجاح</a></li>
+          </ul>
+        </div>
+        <!-- Support -->
+        <div class="col-span-1">
+          <h4 class="text-white font-bold mb-6">الدعم والمساعدة</h4>
+          <ul class="space-y-4 text-on-surface-variant">
+            <li><a href="{{ route('dapro.index') }}#faq" class="hover:text-tertiary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="https://wa.me/201000143085" class="hover:text-tertiary transition-colors">تواصل معنا واتساب</a>
+            </li>
+            <li><a href="{{ route('dapro.privacy') }}" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="{{ route('dapro.refund') }}" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a></li>
+            <li><a href="{{ route('dapro.terms') }}" class="hover:text-tertiary transition-colors">شروط الاستخدام</a></li>
+          </ul>
+        </div>
+        <!-- Brand Info -->
+        <div class="col-span-1 md:col-span-1">
+          <div class="text-2xl font-black text-white mb-6">Data Analysis Pro</div>
+          <p class="text-on-surface-variant mb-8 leading-relaxed">
+            أول برنامج تعليمي عربي متكامل يهدف لتمكينك من مجال تحليل البيانات بأحدث الأدوات والتقنيات العالمية.
+          </p>
+          <!-- Social Media Icons -->
+          <div class="flex flex-row-reverse gap-4">
+            <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+              href="https://www.facebook.com/eraapro" title="Facebook">
+              <i class="fa-brands fa-facebook-f text-xl"></i>
+            </a>
+            <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+              href="https://wa.me/201000143085" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+            <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+              href="https://www.linkedin.com/company/eraapro/" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in text-xl"></i>
+            </a>
+            <!-- <a class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#26A5E4] hover:text-white transition-all hover:-translate-y-1 shadow-lg"
+                href="#" title="Telegram">
+                <i class="fa-brands fa-telegram text-xl"></i>
+              </a> -->
+          </div>
+        </div>
+        <!-- Newsletter/Contact -->
+        <!-- <div class="col-span-1">
+            <h4 class="text-white font-bold mb-6">احصل على تحديثاتنا</h4>
+            <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+              اشترك في القائمة البريدية لتحصل على نصائح أسبوعية في تحليل البيانات.
+            </p>
+            <div class="flex flex-row-reverse gap-2">
+              <input type="email" placeholder="بريدك الإلكتروني" class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-tertiary text-sm">
+              <button class="bg-tertiary text-on-tertiary px-4 py-2 rounded-lg font-bold hover:brightness-110 transition-all text-sm">اشترك</button>
+            </div>
+          </div> -->
+      </div>
+      <!-- Bottom Footer -->
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row-reverse justify-between items-center gap-6">
+        <p class="text-on-surface-variant text-sm text-center md:text-right">
+          © 2026 Data Analysis Pro. جميع الحقوق محفوظة.
+        </p>
+        <p class="text-on-surface-variant text-sm text-center md:text-left">
+          صنع بكل ❤️ لمجتمع محللي البيانات العربي
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

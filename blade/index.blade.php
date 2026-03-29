@@ -132,14 +132,14 @@
       <div class="text-lg md:text-2xl font-black text-white tracking-tighter flex-shrink truncate">Data Analysis Pro
       </div>
       <div class="hidden md:flex flex-row-reverse gap-8 items-center">
-        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="index.html#faq">الأسئلة</a>
+        <a class="text-[#D7E3FC] hover:text-white transition-colors" href="{{ route('dapro.index') }}#faq">الأسئلة</a>
         <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#testimonials">قصص النجاح</a>
         <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#pricing">الأسعار</a>
         <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#instructor">المدرب</a>
         <a class="text-[#D7E3FC] hover:text-white transition-colors" href="#roadmap">المسار</a>
         <a class="text-[#FFD700] border-b-2 border-[#FFD700] pb-1" href="#">الرئيسية</a>
       </div>
-      <a href="checkout.html"
+      <a href="{{ route('dapro.checkout') }}"
         class="bg-tertiary text-on-tertiary text-sm md:text-lg px-4 md:px-6 py-2 rounded-md font-bold hover:scale-95 active:scale-90 duration-200 transition-all flex items-center justify-center whitespace-nowrap flex-shrink-0">
         سجل الآن
       </a>
@@ -183,9 +183,8 @@
       </div>
 
       <div
-        class="flex flex-row-reverse flex-wrap items-center justify-center gap-6 md:gap-10 opacity-90 transition-all hover:opacity-100 max-w-4xl"
+        class="flex flex-row-reverse items-center justify-center gap-8 md:gap-12 opacity-90 transition-all hover:opacity-100"
         data-aos="fade-up" data-aos-delay="500">
-        <!-- Power BI -->
         <div class="flex flex-col items-center gap-2 group">
           <div
             class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#F2C811]/50 group-hover:scale-110 transition-all duration-300">
@@ -199,7 +198,6 @@
           <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Power BI</span>
         </div>
 
-        <!-- Excel -->
         <div class="flex flex-col items-center gap-2 group">
           <div
             class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#217346]/50 group-hover:scale-110 transition-all duration-300">
@@ -214,63 +212,10 @@
           </div>
           <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Excel</span>
         </div>
-
-        <!-- AI -->
-        <div class="flex flex-col items-center gap-2 group">
-          <div
-            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#A855F7]/50 group-hover:scale-110 transition-all duration-300">
-            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(168,85,247,0.3)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 16C12 16 9 13 9 9C9 7.34315 10.3431 6 12 6C13.6569 6 15 7.34315 15 9C15 13 12 16 12 16Z" fill="#A855F7" />
-              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#A855F7" stroke-width="2" stroke-dasharray="2 2" />
-              <circle cx="12" cy="9" r="2" fill="white" />
-            </svg>
-          </div>
-          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">AI</span>
-        </div>
-
-        <!-- Data Science -->
-        <div class="flex flex-col items-center gap-2 group">
-          <div
-            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#00fbfb]/50 group-hover:scale-110 transition-all duration-300">
-            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(0,251,251,0.3)]" viewBox="0 0 24 24" fill="none" stroke="#00fbfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-              <path d="M22 12A10 10 0 0 0 12 2v10z" fill="#00fbfb" fill-opacity="0.2" />
-            </svg>
-          </div>
-          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Data Science</span>
-        </div>
-
-        <!-- Report Writing -->
-        <div class="flex flex-col items-center gap-2 group">
-          <div
-            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#e9c400]/50 group-hover:scale-110 transition-all duration-300">
-            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(233,196,0,0.3)]" viewBox="0 0 24 24" fill="none" stroke="#e9c400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-            </svg>
-          </div>
-          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Report Writing</span>
-        </div>
-
-        <!-- Eraa Data Camp -->
-        <div class="flex flex-col items-center gap-2 group">
-          <div
-            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#ff745b]/50 group-hover:scale-110 transition-all duration-300">
-            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(255,116,91,0.3)]" viewBox="0 0 24 24" fill="none" stroke="#ff745b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60 text-center">Eraa Data Camp</span>
-        </div>
       </div>
 
       <div data-aos="fade-up" data-aos-delay="600" class="mt-2 w-full flex justify-center">
-        <a href="checkout.html"
+        <a href="{{ route('dapro.checkout') }}"
           class="bg-tertiary text-center text-on-tertiary text-base md:text-xl px-12 py-5 rounded-md font-extrabold hover:shadow-[0_0_20px_rgba(233,196,0,0.4)] transition-all inline-block w-full md:w-auto whitespace-nowrap">
           سجّل الآن و احجز مكانك
         </a>
@@ -543,7 +488,7 @@
           </div>
           <div class="text-6xl md:text-9xl font-headline font-black text-white mb-8 leading-tight">4,500 <span
               class="text-3xl md:text-4xl align-middle">EGP</span></div>
-          <a href="checkout.html"
+          <a href="{{ route('dapro.checkout') }}"
             class="w-full max-w-2xl mx-auto bg-tertiary text-on-tertiary px-8 py-6 rounded-xl font-black text-sm md:text-2xl hover:brightness-110 hover:scale-[1.02] transition-all shadow-[0_20px_40px_rgba(233,196,0,0.2)] block">
             اشترك دلوقتي عشان تستفيد من الخصم
           </a>
@@ -557,7 +502,7 @@
       <div class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-col lg:flex-row-reverse">
         <div class="w-full lg:w-2/5 relative">
           <img class="w-full h-full object-cover" data-alt="Mohammad Abdelfattah - Lead Instructor"
-            src="./assets/da-pro-1.jpeg" />
+            src="{{ asset('images/da-pro-1.jpeg') }}" />
           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-surface-container-high to-transparent h-32">
           </div>
         </div>
@@ -608,7 +553,7 @@
       <h2 class="text-4xl md:text-7xl font-headline font-black text-on-tertiary mb-8">ابدأ رحلتك للاحتراف فوراً</h2>
       <p class="text-2xl md:text-3xl text-on-tertiary/80 font-bold mb-12 max-w-3xl mx-auto">متخليش الفرصة تفوتك، الاماكن
         المتاحة بالخصم الحالي محدودة جدا!</p>
-      <a href="checkout.html"
+      <a href="{{ route('dapro.checkout') }}"
         class="bg-surface-dim text-white px-16 py-6 rounded-full font-black text-sm md:text-2xl hover:bg-black transition-all shadow-2xl flex items-center gap-4 mx-auto w-fit">
         <span>سجل الآن و احجز مكانك</span>
         <span class="material-symbols-outlined text-3xl">arrow_back</span>
@@ -953,7 +898,7 @@
         </div>
       </div>
       <div class="text-center mt-12" data-aos="zoom-in" data-aos-delay="500">
-        <a href="checkout.html"
+        <a href="{{ route('dapro.checkout') }}"
           class="bg-secondary-container text-on-secondary-container px-12 py-5 rounded-md font-black text-xl hover:scale-105 transition-transform inline-block">
           سجل الآن </a>
       </div>
@@ -1113,7 +1058,7 @@
         <div class="text-6xl md:text-9xl font-headline font-black text-white">4,500 <span class="text-3xl">EGP</span>
         </div>
       </div>
-      <a href="checkout.html"
+      <a href="{{ route('dapro.checkout') }}"
         class="bg-tertiary text-on-tertiary px-16 py-8 rounded-md font-black text-base md:text-3xl shadow-[0_20px_60px_rgba(233,196,0,0.3)] hover:scale-105 transition-transform duration-300 inline-block">
         سجّل الآن و احجز مكانك 🔥
       </a>
@@ -1223,23 +1168,23 @@
         <div class="col-span-1">
           <h4 class="text-white font-bold mb-6">روابط سريعة</h4>
           <ul class="space-y-4 text-on-surface-variant">
-            <li><a href="index.html#" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
-            <li><a href="index.html#roadmap" class="hover:text-tertiary transition-colors">مسار الكورس</a></li>
-            <li><a href="index.html#pricing" class="hover:text-tertiary transition-colors">أسعار الاشتراك</a></li>
-            <li><a href="index.html#instructor" class="hover:text-tertiary transition-colors">تعرف على المدرب</a></li>
-            <li><a href="index.html#testimonials" class="hover:text-tertiary transition-colors">قصص النجاح</a></li>
+            <li><a href="{{ route('dapro.index') }}#" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
+            <li><a href="{{ route('dapro.index') }}#roadmap" class="hover:text-tertiary transition-colors">مسار الكورس</a></li>
+            <li><a href="{{ route('dapro.index') }}#pricing" class="hover:text-tertiary transition-colors">أسعار الاشتراك</a></li>
+            <li><a href="{{ route('dapro.index') }}#instructor" class="hover:text-tertiary transition-colors">تعرف على المدرب</a></li>
+            <li><a href="{{ route('dapro.index') }}#testimonials" class="hover:text-tertiary transition-colors">قصص النجاح</a></li>
           </ul>
         </div>
         <!-- Support -->
         <div class="col-span-1">
           <h4 class="text-white font-bold mb-6">الدعم والمساعدة</h4>
           <ul class="space-y-4 text-on-surface-variant">
-            <li><a href="index.html#faq" class="hover:text-tertiary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="{{ route('dapro.index') }}#faq" class="hover:text-tertiary transition-colors">الأسئلة الشائعة</a></li>
             <li><a href="https://wa.me/201000143085" class="hover:text-tertiary transition-colors">تواصل معنا واتساب</a>
             </li>
-            <li><a href="privacy.html" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a></li>
-            <li><a href="refund.html" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a></li>
-            <li><a href="terms.html" class="hover:text-tertiary transition-colors">شروط الاستخدام</a></li>
+            <li><a href="{{ route('dapro.privacy') }}" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="{{ route('dapro.refund') }}" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a></li>
+            <li><a href="{{ route('dapro.terms') }}" class="hover:text-tertiary transition-colors">شروط الاستخدام</a></li>
           </ul>
         </div>
         <!-- Brand Info -->
