@@ -7,6 +7,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Data Analysis Pro - إتمام التسجيل</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="icon" type="image/x-icon" href="{{asset('data/03.png')}}" />
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500&amp;family=Cairo:wght@700;800&amp;display=swap"
     rel="stylesheet" />
@@ -313,12 +314,14 @@
                 <input id="field-first-name" type="text"
                   class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20"
                   placeholder="محمد" />
+                <span id="error-user_name" class="text-error text-[10px] hidden"></span>
               </div>
               <div class="space-y-1">
                 <label class="block text-secondary-container text-xs font-bold">الاسم الأخير</label>
                 <input id="field-last-name" type="text"
                   class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20"
                   placeholder="أحمد" />
+                <span id="error-last_name" class="text-error text-[10px] hidden"></span>
               </div>
             </div>
             <div class="space-y-1">
@@ -326,12 +329,14 @@
               <input id="field-email" type="email" dir="ltr"
                 class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
                 placeholder="example@mail.com" />
+              <span id="error-email" class="text-error text-[10px] hidden"></span>
             </div>
             <div class="space-y-1">
               <label class="block text-secondary-container text-xs font-bold">رقم الهاتف</label>
-              <input id="field-phone" type="tel" dir="ltr"
+              <input id="field-phone_number" type="tel" dir="ltr"
                 class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
                 placeholder="01xxxxxxxxx" />
+              <span id="error-phone_number" class="text-error text-[10px] hidden"></span>
             </div>
             <div id="form-hint" class="flex items-center gap-2 text-xs text-on-surface-variant pt-1">
               <span class="material-symbols-outlined text-sm">info</span>
@@ -394,6 +399,7 @@
                   <input id="field-receipt" type="file" accept="image/*" class="hidden"
                     onchange="handleReceiptChange(this)" />
                 </label>
+                <span id="error-receipt" class="text-error text-[10px] hidden text-center block"></span>
               </div>
 
               <div id="instapay-feedback" class="hidden rounded-lg px-4 py-3 text-sm font-bold text-center"></div>
@@ -513,8 +519,40 @@
   <script>
     const API_BASE = 'https://api.nebrase.com/api/data-analysis-pro/checkout';
 
+    const errorMap = {
+      'user_name': 'الاسم الأول مطلوب',
+      'last_name': 'الاسم الأخير مطلوب',
+      'email': 'البريد الإلكتروني مطلوب ويجب أن يكون صحيحاً',
+      'phone_number': 'رقم الهاتف مطلوب',
+      'receipt': 'يجب رفع صورة الإيصال',
+      'payment_type': 'طريقة الدفع غير صالحة'
+    };
+
+    function clearErrors() {
+      document.querySelectorAll('[id^="error-"]').forEach(el => {
+        el.textContent = '';
+        el.classList.add('hidden');
+      });
+      hideInstapayFeedback();
+    }
+
+    function showFieldError(field, message) {
+      const el = document.getElementById('error-' + field);
+      if (el) {
+        el.textContent = message;
+        el.classList.remove('hidden');
+      }
+    }
+
+    function handleServerErrors(errors) {
+      Object.keys(errors).forEach(key => {
+        const message = errorMap[key] || errors[key][0];
+        showFieldError(key, message);
+      });
+    }
+
     // --- Form completeness watcher ---
-    const formFields = ['field-first-name', 'field-last-name', 'field-email', 'field-phone'];
+    const formFields = ['field-first-name', 'field-last-name', 'field-email', 'field-phone_number'];
     function checkFormComplete() {
       const allFilled = formFields.every(id => document.getElementById(id).value.trim() !== '');
       const paySection = document.getElementById('payment-section');
@@ -542,6 +580,7 @@
       const instapayBtn = document.getElementById('tab-instapay');
       const visaContent = document.getElementById('content-visa');
       const instapayContent = document.getElementById('content-instapay');
+      clearErrors();
       if (tab === 'visa') {
         visaBtn.classList.add('border-tertiary', 'text-tertiary');
         visaBtn.classList.remove('border-transparent', 'text-on-surface-variant');
@@ -562,66 +601,107 @@
     // --- Helpers ---
     function getFormData() {
       return {
-        first_name: document.getElementById('field-first-name').value.trim(),
+        user_name: document.getElementById('field-first-name').value.trim(),
         last_name: document.getElementById('field-last-name').value.trim(),
         email: document.getElementById('field-email').value.trim(),
-        phone: document.getElementById('field-phone').value.trim(),
+        phone_number: document.getElementById('field-phone_number').value.trim(),
       };
     }
+
+    function validateClientSide(data) {
+      let isValid = true;
+      clearErrors();
+
+      if (!data.user_name) {
+        showFieldError('user_name', errorMap.user_name);
+        isValid = false;
+      }
+      if (!data.last_name) {
+        showFieldError('last_name', errorMap.last_name);
+        isValid = false;
+      }
+
+      if (!data.email) {
+        showFieldError('email', errorMap.email);
+        isValid = false;
+      }
+
+      const phoneRegex = /^\d{10,15}$/;
+      if (!data.phone_number || !phoneRegex.test(data.phone_number)) {
+        showFieldError('phone_number', errorMap.phone_number);
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
     function setLoading(type, loading) {
       const btn = document.getElementById('btn-' + type);
       const spinner = document.getElementById('btn-' + type + '-spinner');
       const text = document.getElementById('btn-' + type + '-text');
+      if (!btn) return;
       btn.disabled = loading;
-      spinner.classList.toggle('hidden', !loading);
-      text.classList.toggle('opacity-50', loading);
+      if (spinner) spinner.classList.toggle('hidden', !loading);
+      if (text) text.classList.toggle('opacity-50', loading);
     }
 
     // --- Visa / Wallet submit ---
     async function submitPayment(paymentType) {
-      setLoading(paymentType === 'visa' ? 'visa' : 'wallet', true);
+      const data = getFormData();
+      if (!validateClientSide(data)) return;
+
+      const btnType = paymentType === 'visa' ? 'visa' : 'wallet';
+      setLoading(btnType, true);
       const otherType = paymentType === 'visa' ? 'wallet' : 'visa';
-      document.getElementById('btn-' + otherType).disabled = true;
+      const otherBtn = document.getElementById('btn-' + otherType);
+      if (otherBtn) otherBtn.disabled = true;
 
       try {
         const res = await fetch(API_BASE + '/visa', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ ...getFormData(), payment_type: paymentType }),
+          body: JSON.stringify({ ...data, payment_type: paymentType }),
         });
         const json = await res.json();
-        if (json?.data?.url) {
+
+        if (res.ok && json?.data?.url) {
           window.location.href = json.data.url;
           return;
+        } else if (res.status === 422) {
+          handleServerErrors(json.data);
+        } else {
+          showInstapayFeedback('❌ حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.', false);
         }
       } catch (e) {
-        // silent — reset below
+        showInstapayFeedback('❌ تعذّر الاتصال بالخادم. تحقق من اتصالك وحاول مجدداً.', false);
+      } finally {
+        setLoading(btnType, false);
+        if (otherBtn) otherBtn.disabled = false;
       }
-
-      setTimeout(() => {
-        setLoading(paymentType === 'visa' ? 'visa' : 'wallet', false);
-        document.getElementById('btn-' + otherType).disabled = false;
-      }, 2000);
     }
 
     // --- InstaPay submit ---
     function handleReceiptChange(input) {
       const label = document.getElementById('receipt-label-text');
       label.textContent = input.files[0] ? input.files[0].name : 'اضغط لرفع الإيصال';
+      clearErrors();
     }
 
     async function submitInstapay() {
+      const data = getFormData();
+      if (!validateClientSide(data)) return;
+
       const receipt = document.getElementById('field-receipt').files[0];
       if (!receipt) {
-        showInstapayFeedback('يرجى رفع صورة الإيصال أولاً', false);
+        showFieldError('receipt', errorMap.receipt);
         return;
       }
+
       setLoading('instapay', true);
       hideInstapayFeedback();
 
       const fd = new FormData();
-      const form = getFormData();
-      Object.entries(form).forEach(([k, v]) => fd.append(k, v));
+      Object.entries(data).forEach(([k, v]) => fd.append(k, v));
       fd.append('receipt', receipt);
 
       try {
@@ -630,8 +710,12 @@
           headers: { 'Accept': 'application/json' },
           body: fd,
         });
+        const json = await res.json();
+
         if (res.ok) {
           showInstapayFeedback('✅ تم استلام إيصالك بنجاح! سنتواصل معك قريباً لتأكيد التسجيل.', true);
+        } else if (res.status === 422) {
+          handleServerErrors(json.data);
         } else {
           showInstapayFeedback('❌ حدث خطأ أثناء إرسال الإيصال. يرجى المحاولة مرة أخرى.', false);
         }
@@ -644,6 +728,7 @@
 
     function showInstapayFeedback(msg, success) {
       const el = document.getElementById('instapay-feedback');
+      if (!el) return;
       el.textContent = msg;
       el.className = 'rounded-lg px-4 py-3 text-sm font-bold text-center ' +
         (success ? 'bg-green-900/40 text-green-300 border border-green-500/30'
@@ -651,7 +736,8 @@
       el.classList.remove('hidden');
     }
     function hideInstapayFeedback() {
-      document.getElementById('instapay-feedback').classList.add('hidden');
+      const el = document.getElementById('instapay-feedback');
+      if (el) el.classList.add('hidden');
     }
   </script>
 </body>
