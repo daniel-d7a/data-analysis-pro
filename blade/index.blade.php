@@ -183,8 +183,9 @@
       </div>
 
       <div
-        class="flex flex-row-reverse items-center justify-center gap-8 md:gap-12 opacity-90 transition-all hover:opacity-100"
+        class="flex flex-row-reverse flex-wrap items-center justify-center gap-6 md:gap-10 opacity-90 transition-all hover:opacity-100 max-w-4xl"
         data-aos="fade-up" data-aos-delay="500">
+        <!-- Power BI -->
         <div class="flex flex-col items-center gap-2 group">
           <div
             class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#F2C811]/50 group-hover:scale-110 transition-all duration-300">
@@ -198,6 +199,7 @@
           <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Power BI</span>
         </div>
 
+        <!-- Excel -->
         <div class="flex flex-col items-center gap-2 group">
           <div
             class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#217346]/50 group-hover:scale-110 transition-all duration-300">
@@ -211,6 +213,59 @@
             </svg>
           </div>
           <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Excel</span>
+        </div>
+
+        <!-- AI -->
+        <div class="flex flex-col items-center gap-2 group">
+          <div
+            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#A855F7]/50 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(168,85,247,0.3)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 16C12 16 9 13 9 9C9 7.34315 10.3431 6 12 6C13.6569 6 15 7.34315 15 9C15 13 12 16 12 16Z" fill="#A855F7" />
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#A855F7" stroke-width="2" stroke-dasharray="2 2" />
+              <circle cx="12" cy="9" r="2" fill="white" />
+            </svg>
+          </div>
+          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">AI</span>
+        </div>
+
+        <!-- Data Science -->
+        <div class="flex flex-col items-center gap-2 group">
+          <div
+            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#00fbfb]/50 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(0,251,251,0.3)]" viewBox="0 0 24 24" fill="none" stroke="#00fbfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+              <path d="M22 12A10 10 0 0 0 12 2v10z" fill="#00fbfb" fill-opacity="0.2" />
+            </svg>
+          </div>
+          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Data Science</span>
+        </div>
+
+        <!-- Report Writing -->
+        <div class="flex flex-col items-center gap-2 group">
+          <div
+            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#e9c400]/50 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(233,196,0,0.3)]" viewBox="0 0 24 24" fill="none" stroke="#e9c400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60">Report Writing</span>
+        </div>
+
+        <!-- Eraa Data Camp -->
+        <div class="flex flex-col items-center gap-2 group">
+          <div
+            class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-high rounded-xl flex items-center justify-center shadow-xl border border-outline-variant/10 group-hover:border-[#ff745b]/50 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(255,116,91,0.3)]" viewBox="0 0 24 24" fill="none" stroke="#ff745b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <span class="font-label text-white text-xs md:text-sm font-bold opacity-60 text-center">Eraa Data Camp</span>
         </div>
       </div>
 

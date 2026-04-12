@@ -154,6 +154,18 @@
       width: 100%;
       position: relative;
     }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -271,10 +283,11 @@
           </div>
         </div> -->
       </div>
-      <!-- LEFT COLUMN: FORM (NARROWER, STICKY) -->
+      <!-- LEFT COLUMN: FORM + PAYMENT (NARROWER, STICKY) -->
       <aside class="lg:col-span-5 lg:sticky lg:top-32 order-1 lg:order-2">
         <div
           class="bg-surface-container-high p-8 rounded-xl border-2 border-secondary-container/20 glow-gold shadow-2xl">
+
           <!-- Pricing -->
           <div class="text-center mb-8">
             <div class="inline-block bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-sm font-bold mb-4">
@@ -287,146 +300,113 @@
             </div>
             <p class="text-on-surface-variant text-xs mt-2 italic">* السعر شامل الضريبة والوصول مدى الحياة</p>
           </div>
-          <!-- Enrollment Form -->
-          <!-- <form action="#" class="space-y-5">
-            <div class="space-y-2">
-              <label class="block text-secondary-container text-sm font-bold mr-1">الاسم الكامل</label>
-              <input
-                class="w-full bg-surface-container-highest border border-outline-variant/10 rounded-lg p-4 text-white focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20"
-                placeholder="اكتب اسمك الثلاثي" type="text" />
-            </div>
-            <div class="space-y-2">
-              <label class="block text-secondary-container text-sm font-bold mr-1">البريد الإلكتروني</label>
-              <input
-                class="w-full bg-surface-container-highest border border-outline-variant/10 rounded-lg p-4 text-white focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
-                dir="ltr" placeholder="example@mail.com" type="email" />
-            </div>
-            <div class="space-y-2">
-              <label class="block text-secondary-container text-sm font-bold mr-1">رقم الموبايل</label>
-              <input
-                class="w-full bg-surface-container-highest border border-outline-variant/10 rounded-lg p-4 text-white focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
-                dir="ltr" placeholder="01xxxxxxxxx" type="tel" />
-            </div>
-            <button
-              class="w-full bg-tertiary py-5 rounded-lg text-on-tertiary font-black text-base md:text-xl hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-tertiary/20 flex items-center justify-center gap-2 mt-4"
-              type="submit">
-              سجّل دلوقتي و احجز مكانك 🔥
-            </button>
-          </form> -->
 
-          <!-- Payment Tabs -->
-          <div class="mt-8">
+          <!-- User Info Form -->
+          <div class="space-y-4 mb-6">
+            <h3 class="text-white font-bold text-base mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary text-xl">person</span>
+              بيانات التسجيل
+            </h3>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="space-y-1">
+                <label class="block text-secondary-container text-xs font-bold">الاسم الأول</label>
+                <input id="field-first-name" type="text"
+                  class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20"
+                  placeholder="محمد" />
+              </div>
+              <div class="space-y-1">
+                <label class="block text-secondary-container text-xs font-bold">الاسم الأخير</label>
+                <input id="field-last-name" type="text"
+                  class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20"
+                  placeholder="أحمد" />
+              </div>
+            </div>
+            <div class="space-y-1">
+              <label class="block text-secondary-container text-xs font-bold">البريد الإلكتروني</label>
+              <input id="field-email" type="email" dir="ltr"
+                class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
+                placeholder="example@mail.com" />
+            </div>
+            <div class="space-y-1">
+              <label class="block text-secondary-container text-xs font-bold">رقم الهاتف</label>
+              <input id="field-phone" type="tel" dir="ltr"
+                class="w-full bg-surface-container-highest border border-outline-variant/20 rounded-lg px-3 py-3 text-white text-sm focus:ring-2 focus:ring-tertiary focus:outline-none transition-all placeholder:text-white/20 text-left"
+                placeholder="01xxxxxxxxx" />
+            </div>
+            <div id="form-hint" class="flex items-center gap-2 text-xs text-on-surface-variant pt-1">
+              <span class="material-symbols-outlined text-sm">info</span>
+              أكمل بياناتك لعرض خيارات الدفع
+            </div>
+          </div>
+
+          <!-- Payment Section (revealed after form filled) -->
+          <div id="payment-section" class="hidden">
+            <div class="flex items-center gap-2 mb-4 text-secondary-container text-sm font-bold">
+              <span class="material-symbols-outlined text-lg"
+                style="font-variation-settings:'FILL' 1;">check_circle</span>
+              اختر طريقة الدفع
+            </div>
+
+            <!-- Tabs -->
             <div class="flex border-b border-outline-variant/20 mb-6">
               <button onclick="switchTab('visa')" id="tab-visa"
-                class="flex-1 py-3 font-bold text-center border-b-2 border-tertiary text-tertiary transition-all">
-                <i class="fa-solid fa-credit-card ml-2"></i> بطاقة بنكية (Visa/Mastercard)
+                class="flex-1 py-3 font-bold text-center border-b-2 border-tertiary text-tertiary transition-all text-sm">
+                <i class="fa-solid fa-credit-card ml-2"></i> بطاقة بنكية
               </button>
               <button onclick="switchTab('instapay')" id="tab-instapay"
-                class="flex-1 py-3 font-bold text-center border-b-2 border-transparent text-on-surface-variant hover:text-white transition-all">
+                class="flex-1 py-3 font-bold text-center border-b-2 border-transparent text-on-surface-variant hover:text-white transition-all text-sm">
                 <i class="fa-solid fa-mobile-screen-button ml-2"></i> InstaPay
               </button>
             </div>
 
-            <!-- Visa Tab Content -->
-            <div id="content-visa" class="space-y-6">
-              <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 text-center">
-                <p class="text-on-surface-variant mb-6 text-sm">ادفع بأمان باستخدام بطاقتك البنكية (فيزا أو ماستركارد)
-                  من خلال بوابة دفع مشفرة.</p>
-                <a href="https://accept.paymobsolutions.com/standalone?ref=p_LRR2RlNXa1c1d095dHo1Uzg5QjBEYnNvUT09X0NldUREdlI3NFl3UGE0ZVd3WFQvYVE9PQ"
-                  target="_blank"
-                  class="w-full bg-tertiary py-4 rounded-lg text-on-tertiary font-black text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-tertiary/20 flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-lock text-sm"></i>
-                  دفع بالبطاقة البنكية الآن
-                </a>
-              </div>
+            <!-- Visa Tab -->
+            <div id="content-visa" class="space-y-3">
+              <p class="text-on-surface-variant text-xs text-center mb-4">ادفع باستخدام بطاقتك البنكية أو المحفظة
+                الإلكترونية من خلال بوابة دفع مشفرة.</p>
+              <button id="btn-visa" onclick="submitPayment('visa')"
+                class="w-full bg-tertiary py-4 rounded-lg text-on-tertiary font-black text-base hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-tertiary/20 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-credit-card text-sm"></i>
+                <span id="btn-visa-text">الدفع بالبطاقة (Visa/Mastercard)</span>
+                <span id="btn-visa-spinner" class="hidden"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+              </button>
+              <button id="btn-wallet" onclick="submitPayment('wallet')"
+                class="w-full bg-surface-container-highest border border-outline-variant/30 py-4 rounded-lg text-white font-black text-base hover:bg-surface-bright hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-wallet text-sm"></i>
+                <span id="btn-wallet-text">الدفع بالمحفظة الإلكترونية</span>
+                <span id="btn-wallet-spinner" class="hidden"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+              </button>
             </div>
 
-            <!-- InstaPay Tab Content -->
-            <div id="content-instapay" class="hidden space-y-6 animate-fade-in">
-              <div class="space-y-4">
-                <a href="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI" target="_blank" class="block group">
-                  <img src="{{ asset('images/da-pro-instapay.jpeg') }}" alt="Instapay Payment"
-                    class="w-full h-auto rounded-lg shadow-xl group-hover:scale-[1.01] transition-transform duration-300 border border-outline-variant/20" />
-                </a>
+            <!-- InstaPay Tab -->
+            <div id="content-instapay" class="hidden space-y-4">
+              <a href="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI" target="_blank" class="block group">
+                <img src="{{ asset('images/da-pro-instapay.jpeg') }}" alt="Instapay Payment"
+                  class="w-full h-auto rounded-lg shadow-xl group-hover:scale-[1.01] transition-transform duration-300 border border-outline-variant/20" />
+              </a>
+              <p class="text-on-surface-variant text-xs text-center">حوّل المبلغ عبر InstaPay ثم ارفع صورة الإيصال</p>
 
-                <a href="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI" target="_blank"
-                  class="w-full bg-secondary-container py-4 rounded-lg text-on-secondary-container font-black text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-secondary-container/20 flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-bolt"></i>
-                  دفع سريع عبر تطبيق InstaPay
-                </a>
-
-                <div class="relative group">
-                  <label class="block text-secondary-container text-xs font-bold mb-2 mr-1">رابط الدفع (للنسخ)</label>
-                  <div class="flex gap-2">
-                    <input id="instapay-link" type="text" readonly value="https://ipn.eg/S/mostafaeraa/instapay/5FQ5ZI"
-                      class="flex-1 bg-surface-container-highest border border-outline-variant/10 rounded-lg p-3 text-white text-xs focus:outline-none" />
-                    <button onclick="copyLink()"
-                      class="bg-surface-bright px-4 rounded-lg text-white hover:bg-outline transition-colors">
-                      <i class="fa-regular fa-copy"></i>
-                    </button>
-                  </div>
-                </div>
+              <div class="space-y-2">
+                <label class="block text-secondary-container text-xs font-bold">صورة الإيصال</label>
+                <label id="receipt-drop-zone"
+                  class="flex flex-col items-center justify-center gap-2 w-full h-28 border-2 border-dashed border-outline-variant/40 rounded-lg cursor-pointer hover:border-secondary-container/60 transition-colors bg-surface-container">
+                  <span class="material-symbols-outlined text-on-surface-variant text-3xl">upload_file</span>
+                  <span id="receipt-label-text" class="text-on-surface-variant text-xs">اضغط لرفع الإيصال</span>
+                  <input id="field-receipt" type="file" accept="image/*" class="hidden"
+                    onchange="handleReceiptChange(this)" />
+                </label>
               </div>
 
-              <!-- WhatsApp Confirmation -->
-              <div class="bg-surface-container-high border border-[#25D366]/30 rounded-xl p-5 text-center shadow-lg">
-                <p class="text-white font-bold mb-3 text-sm">إرسال إيصال التحويل لتأكيد الحجز</p>
-                <a href="https://wa.me/201000143085" target="_blank"
-                  class="w-full bg-[#25D366] text-white py-4 rounded-lg font-black text-base hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#25D366]/20 flex items-center justify-center gap-2">
-                  <i class="fa-brands fa-whatsapp text-xl"></i>
-                  أرسل الإيصال عبر واتساب
-                </a>
-              </div>
+              <div id="instapay-feedback" class="hidden rounded-lg px-4 py-3 text-sm font-bold text-center"></div>
+
+              <button id="btn-instapay" onclick="submitInstapay()"
+                class="w-full bg-secondary-container py-4 rounded-lg text-on-secondary-container font-black text-base hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-secondary-container/20 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-bolt"></i>
+                <span id="btn-instapay-text">تأكيد الدفع عبر InstaPay</span>
+                <span id="btn-instapay-spinner" class="hidden"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+              </button>
             </div>
           </div>
 
-          <script>
-            function switchTab(tab) {
-              const visaBtn = document.getElementById('tab-visa');
-              const instapayBtn = document.getElementById('tab-instapay');
-              const visaContent = document.getElementById('content-visa');
-              const instapayContent = document.getElementById('content-instapay');
-
-              if (tab === 'visa') {
-                visaBtn.classList.add('border-tertiary', 'text-tertiary');
-                visaBtn.classList.remove('border-transparent', 'text-on-surface-variant');
-                instapayBtn.classList.remove('border-tertiary', 'text-tertiary');
-                instapayBtn.classList.add('border-transparent', 'text-on-surface-variant');
-                visaContent.classList.remove('hidden');
-                instapayContent.classList.add('hidden');
-              } else {
-                instapayBtn.classList.add('border-tertiary', 'text-tertiary');
-                instapayBtn.classList.remove('border-transparent', 'text-on-surface-variant');
-                visaBtn.classList.remove('border-tertiary', 'text-tertiary');
-                visaBtn.classList.add('border-transparent', 'text-on-surface-variant');
-                instapayContent.classList.remove('hidden');
-                visaContent.classList.add('hidden');
-              }
-            }
-
-            function copyLink() {
-              const linkInput = document.getElementById('instapay-link');
-              linkInput.select();
-              document.execCommand('copy');
-              alert('تم نسخ الرابط بنجاح!');
-            }
-          </script>
-
-          <!-- Trust Signals -->
-          <!-- <div class="mt-8 pt-6 border-t border-outline-variant/10 flex justify-around opacity-70">
-            <div class="flex flex-col items-center gap-1">
-              <span class="material-symbols-outlined text-secondary-container">verified</span>
-              <span class="text-[10px] font-label">SSL Secure</span>
-            </div>
-            <div class="flex flex-col items-center gap-1">
-              <span class="material-symbols-outlined text-secondary-container">group</span>
-              <span class="text-[10px] font-label">+2000 Student</span>
-            </div>
-            <div class="flex flex-col items-center gap-1">
-              <span class="material-symbols-outlined text-secondary-container">thumb_up</span>
-              <span class="text-[10px] font-label">Satisfaction</span>
-            </div>
-          </div> -->
           <!-- Instructor Card -->
           <div
             class="mt-8 flex items-center gap-4 p-4 rounded-lg bg-surface-container border border-outline-variant/10">
@@ -441,6 +421,7 @@
       </aside>
     </div>
   </main>
+
   <!-- Floating WhatsApp Button -->
   <a class="fixed bottom-6 left-6 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce flex items-center justify-center border-2 border-white/20"
     href="https://wa.me/201000143085" target="_blank">
@@ -454,22 +435,30 @@
           <h4 class="text-white font-bold mb-6">روابط سريعة</h4>
           <ul class="space-y-4 text-on-surface-variant">
             <li><a href="{{ route('dapro.index') }}#" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
-            <li><a href="{{ route('dapro.index') }}#roadmap" class="hover:text-tertiary transition-colors">مسار الكورس</a></li>
-            <li><a href="{{ route('dapro.index') }}#pricing" class="hover:text-tertiary transition-colors">أسعار الاشتراك</a></li>
-            <li><a href="{{ route('dapro.index') }}#instructor" class="hover:text-tertiary transition-colors">تعرف على المدرب</a></li>
-            <li><a href="{{ route('dapro.index') }}#testimonials" class="hover:text-tertiary transition-colors">قصص النجاح</a></li>
+            <li><a href="{{ route('dapro.index') }}#roadmap" class="hover:text-tertiary transition-colors">مسار
+                الكورس</a></li>
+            <li><a href="{{ route('dapro.index') }}#pricing" class="hover:text-tertiary transition-colors">أسعار
+                الاشتراك</a></li>
+            <li><a href="{{ route('dapro.index') }}#instructor" class="hover:text-tertiary transition-colors">تعرف على
+                المدرب</a></li>
+            <li><a href="{{ route('dapro.index') }}#testimonials" class="hover:text-tertiary transition-colors">قصص
+                النجاح</a></li>
           </ul>
         </div>
         <!-- Support -->
         <div class="col-span-1">
           <h4 class="text-white font-bold mb-6">الدعم والمساعدة</h4>
           <ul class="space-y-4 text-on-surface-variant">
-            <li><a href="{{ route('dapro.index') }}#faq" class="hover:text-tertiary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="{{ route('dapro.index') }}#faq" class="hover:text-tertiary transition-colors">الأسئلة
+                الشائعة</a></li>
             <li><a href="https://wa.me/201000143085" class="hover:text-tertiary transition-colors">تواصل معنا واتساب</a>
             </li>
-            <li><a href="{{ route('dapro.privacy') }}" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a></li>
-            <li><a href="{{ route('dapro.refund') }}" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a></li>
-            <li><a href="{{ route('dapro.terms') }}" class="hover:text-tertiary transition-colors">شروط الاستخدام</a></li>
+            <li><a href="{{ route('dapro.privacy') }}" class="hover:text-tertiary transition-colors">سياسة الخصوصية</a>
+            </li>
+            <li><a href="{{ route('dapro.refund') }}" class="hover:text-tertiary transition-colors">سياسة الاسترجاع</a>
+            </li>
+            <li><a href="{{ route('dapro.terms') }}" class="hover:text-tertiary transition-colors">شروط الاستخدام</a>
+            </li>
           </ul>
         </div>
         <!-- Brand Info -->
@@ -521,6 +510,150 @@
       </div>
     </div>
   </footer>
+  <script>
+    const API_BASE = 'https://api.nebrase.com/api/data-analysis-pro/checkout';
+
+    // --- Form completeness watcher ---
+    const formFields = ['field-first-name', 'field-last-name', 'field-email', 'field-phone'];
+    function checkFormComplete() {
+      const allFilled = formFields.every(id => document.getElementById(id).value.trim() !== '');
+      const paySection = document.getElementById('payment-section');
+      const hint = document.getElementById('form-hint');
+      if (allFilled) {
+        if (paySection.classList.contains('hidden')) {
+          paySection.classList.remove('hidden');
+          paySection.style.animation = 'slideDown 0.4s ease';
+        }
+        if (hint) hint.classList.add('hidden');
+      } else {
+        paySection.classList.add('hidden');
+        if (hint) hint.classList.remove('hidden');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      formFields.forEach(id => {
+        document.getElementById(id).addEventListener('input', checkFormComplete);
+      });
+    });
+
+    // --- Tab switcher ---
+    function switchTab(tab) {
+      const visaBtn = document.getElementById('tab-visa');
+      const instapayBtn = document.getElementById('tab-instapay');
+      const visaContent = document.getElementById('content-visa');
+      const instapayContent = document.getElementById('content-instapay');
+      if (tab === 'visa') {
+        visaBtn.classList.add('border-tertiary', 'text-tertiary');
+        visaBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+        instapayBtn.classList.remove('border-tertiary', 'text-tertiary');
+        instapayBtn.classList.add('border-transparent', 'text-on-surface-variant');
+        visaContent.classList.remove('hidden');
+        instapayContent.classList.add('hidden');
+      } else {
+        instapayBtn.classList.add('border-tertiary', 'text-tertiary');
+        instapayBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+        visaBtn.classList.remove('border-tertiary', 'text-tertiary');
+        visaBtn.classList.add('border-transparent', 'text-on-surface-variant');
+        instapayContent.classList.remove('hidden');
+        visaContent.classList.add('hidden');
+      }
+    }
+
+    // --- Helpers ---
+    function getFormData() {
+      return {
+        first_name: document.getElementById('field-first-name').value.trim(),
+        last_name: document.getElementById('field-last-name').value.trim(),
+        email: document.getElementById('field-email').value.trim(),
+        phone: document.getElementById('field-phone').value.trim(),
+      };
+    }
+    function setLoading(type, loading) {
+      const btn = document.getElementById('btn-' + type);
+      const spinner = document.getElementById('btn-' + type + '-spinner');
+      const text = document.getElementById('btn-' + type + '-text');
+      btn.disabled = loading;
+      spinner.classList.toggle('hidden', !loading);
+      text.classList.toggle('opacity-50', loading);
+    }
+
+    // --- Visa / Wallet submit ---
+    async function submitPayment(paymentType) {
+      setLoading(paymentType === 'visa' ? 'visa' : 'wallet', true);
+      const otherType = paymentType === 'visa' ? 'wallet' : 'visa';
+      document.getElementById('btn-' + otherType).disabled = true;
+
+      try {
+        const res = await fetch(API_BASE + '/visa', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ ...getFormData(), payment_type: paymentType }),
+        });
+        const json = await res.json();
+        if (json?.data?.url) {
+          window.location.href = json.data.url;
+          return;
+        }
+      } catch (e) {
+        // silent — reset below
+      }
+
+      setTimeout(() => {
+        setLoading(paymentType === 'visa' ? 'visa' : 'wallet', false);
+        document.getElementById('btn-' + otherType).disabled = false;
+      }, 2000);
+    }
+
+    // --- InstaPay submit ---
+    function handleReceiptChange(input) {
+      const label = document.getElementById('receipt-label-text');
+      label.textContent = input.files[0] ? input.files[0].name : 'اضغط لرفع الإيصال';
+    }
+
+    async function submitInstapay() {
+      const receipt = document.getElementById('field-receipt').files[0];
+      if (!receipt) {
+        showInstapayFeedback('يرجى رفع صورة الإيصال أولاً', false);
+        return;
+      }
+      setLoading('instapay', true);
+      hideInstapayFeedback();
+
+      const fd = new FormData();
+      const form = getFormData();
+      Object.entries(form).forEach(([k, v]) => fd.append(k, v));
+      fd.append('receipt', receipt);
+
+      try {
+        const res = await fetch(API_BASE + '/instapay', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: fd,
+        });
+        if (res.ok) {
+          showInstapayFeedback('✅ تم استلام إيصالك بنجاح! سنتواصل معك قريباً لتأكيد التسجيل.', true);
+        } else {
+          showInstapayFeedback('❌ حدث خطأ أثناء إرسال الإيصال. يرجى المحاولة مرة أخرى.', false);
+        }
+      } catch (e) {
+        showInstapayFeedback('❌ تعذّر الاتصال بالخادم. تحقق من اتصالك وحاول مجدداً.', false);
+      } finally {
+        setLoading('instapay', false);
+      }
+    }
+
+    function showInstapayFeedback(msg, success) {
+      const el = document.getElementById('instapay-feedback');
+      el.textContent = msg;
+      el.className = 'rounded-lg px-4 py-3 text-sm font-bold text-center ' +
+        (success ? 'bg-green-900/40 text-green-300 border border-green-500/30'
+          : 'bg-red-900/40 text-red-300 border border-red-500/30');
+      el.classList.remove('hidden');
+    }
+    function hideInstapayFeedback() {
+      document.getElementById('instapay-feedback').classList.add('hidden');
+    }
+  </script>
 </body>
 
 </html>
